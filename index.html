@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Événement Roblox</title>
   <style>
-    /* Reset & Fond de page */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Gotham', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     body {
@@ -21,13 +20,12 @@
       min-height: 100vh;
     }
 
-    /* Carte Principale (Modal) */
     .card {
       background-color: #1b1d22;
       border: 1px solid #282a30;
       border-radius: 16px;
       padding: 32px 24px;
-      width: 100%;
+      width: 90%;
       max-width: 380px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       display: flex;
@@ -35,13 +33,13 @@
       align-items: center;
     }
 
-    /* Logo Roblox */
+    /* Ajustement de l'image du logo */
     .logo {
-      width: 150px;
+      height: 36px;
+      width: auto;
       margin-bottom: 28px;
     }
 
-    /* Zone de Saisie */
     .input-group {
       width: 100%;
       margin-bottom: 16px;
@@ -56,18 +54,12 @@
       color: #ffffff;
       font-size: 15px;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .input-field::placeholder {
       color: #72767d;
     }
 
-    .input-field:focus {
-      box-shadow: 0 0 0 2px rgba(0, 162, 87, 0.3);
-    }
-
-    /* Bouton Continue */
     .btn-continue {
       width: 100%;
       background-color: #00a257;
@@ -78,30 +70,14 @@
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
-    }
-
-    .btn-continue:hover {
-      background-color: #00b662;
-    }
-
-    .btn-continue:active {
-      transform: scale(0.98);
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <!-- SVG officiel du logo Roblox en blanc -->
-    <svg class="logo" viewBox="0 0 300 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15.4 0L0 52.6L52.6 68L68 15.4L15.4 0ZM40.9 45.4L22.6 40L28 21.7L46.3 27.1L40.9 45.4Z" fill="white"/>
-      <path d="M92.2 21.6C84.3 21.6 77.9 28 77.9 35.9C77.9 43.8 84.3 50.2 92.2 50.2C100.1 50.2 106.5 43.8 106.5 35.9C106.5 28 100.1 21.6 92.2 21.6ZM92.2 41.8C88.9 41.8 86.3 39.2 86.3 35.9C86.3 32.6 88.9 30 92.2 30C95.5 30 98.1 32.6 98.1 35.9C98.1 39.2 95.5 41.8 92.2 41.8Z" fill="white"/>
-      <path d="M123.7 22H115.3V50H123.7C129.2 50 133.7 45.5 133.7 40V32C133.7 26.5 129.2 22 123.7 22ZM125.3 40C125.3 40.9 124.6 41.6 123.7 41.6H123.7V30.4H123.7C124.6 30.4 125.3 31.1 125.3 32V40Z" fill="white"/>
-      <path d="M150 21.6C142.1 21.6 135.7 28 135.7 35.9C135.7 43.8 142.1 50.2 150 50.2C157.9 50.2 164.3 43.8 164.3 35.9C164.3 28 157.9 21.6 150 21.6ZM150 41.8C146.7 41.8 144.1 39.2 144.1 35.9C144.1 32.6 146.7 30 150 30C153.3 30 155.9 32.6 155.9 35.9C155.9 39.2 153.3 41.8 150 41.8Z" fill="white"/>
-      <path d="M189.5 38.6C188.1 40.5 185.8 41.8 183.3 41.8C179.6 41.8 176.6 38.8 176.6 35.1C176.6 31.4 179.6 28.4 183.3 28.4C185.8 28.4 188.1 29.7 189.5 31.6L195.8 26.8C193 23.2 188.5 20.8 183.3 20.8C175.4 20.8 169 27.2 169 35.1C169 43 175.4 49.4 183.3 49.4C188.5 49.4 193 47 195.8 43.4L189.5 38.6Z" fill="white"/>
-      <path d="M202.8 22H194.4V50H202.8V38.6H212.4V50H220.8V22H212.4V30.2H202.8V22Z" fill="white"/>
-    </svg>
+    <!-- Logo Roblox nettoyé -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_logo_2022.svg" alt="Roblox" class="logo">
 
     <div class="input-group">
       <input type="text" id="username" class="input-field" placeholder="Type your username ..." autocomplete="off">
@@ -109,18 +85,6 @@
 
     <button type="button" class="btn-continue" id="submitBtn">Continue</button>
   </div>
-
-  <script>
-    document.getElementById('submitBtn').addEventListener('click', function() {
-      const username = document.getElementById('username').value;
-      if (username.trim() !== "") {
-        console.log("Nom d'utilisateur entré :", username);
-        // Ajoute ta logique ici (ex: redirection, appel API ou Bot Telegram)
-      } else {
-        alert("Veuillez entrer un nom d'utilisateur.");
-      }
-    });
-  </script>
 
 </body>
 </html>
