@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Événement Roblox</title>
 
   <style>
@@ -10,166 +11,310 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
     }
 
     body {
-      background-color: #111216;
+      background: #101113;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+
+      min-height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+
+      padding: 25px;
     }
 
+    /* CARTE */
     .card {
-      background-color: #1b1d22;
-      border-radius: 10px;
-      padding: 35px 25px 25px;
-      width: 90%;
-      max-width: 340px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      width: min(92vw, 870px);
+
+      background: #17191b;
+
+      border: 1px solid #292c2f;
+      border-radius: 28px;
+
+      padding: 58px 48px 60px;
+
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    /* LOGO */
     .logo {
-      width: 190px;
+      width: 330px;
+      max-width: 70%;
+
       height: auto;
-      margin-bottom: 25px;
+
+      margin-bottom: 100px;
+
       display: block;
     }
 
-    .roblox-text {
-      fill: white;
-      font-family: Arial Black, Impact, sans-serif;
-      font-size: 40px;
+    .logo-text {
+      fill: #ffffff;
+
+      font-family:
+        Arial Black,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 48px;
       font-weight: 900;
-      letter-spacing: -1px;
+
+      letter-spacing: -3px;
     }
 
-    .roblox-square {
-      fill: white;
+    .logo-square {
+      fill: #ffffff;
     }
 
-    .roblox-hole {
-      fill: #1b1d22;
+    .logo-hole {
+      fill: #17191b;
     }
 
-    .input-group {
+    /* CONTENEUR */
+    .form {
       width: 100%;
-      margin-bottom: 15px;
+      max-width: 780px;
     }
 
+    /* CHAMP */
     .input-field {
       width: 100%;
-      height: 50px;
-      background-color: #111216;
-      border: 2px solid #00b06f;
-      border-radius: 8px;
-      padding: 0 16px;
+      height: 112px;
+
+      background: #0e1012;
+
+      border: 3px solid #008f68;
+      border-radius: 28px;
+
+      padding: 0 40px;
+
       color: #ffffff;
-      font-size: 15px;
+
+      font-size: 34px;
+      font-weight: 400;
+
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .input-field::placeholder {
-      color: #72767d;
+      color: #777b80;
+      opacity: 1;
     }
 
     .input-field:focus {
-      border-color: #00c77d;
-      box-shadow: 0 0 0 2px rgba(0, 176, 111, 0.15);
+      border-color: #00b879;
+
+      box-shadow:
+        0 0 0 4px rgba(0, 184, 121, 0.12),
+        0 0 25px rgba(0, 184, 121, 0.12);
     }
 
+    /* BOUTON */
     .btn-continue {
       width: 100%;
-      height: 50px;
-      background-color: #00b06f;
-      color: white;
+      height: 112px;
+
+      margin-top: 32px;
+
+      background: #00b878;
+
+      color: #ffffff;
+
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
+      border-radius: 28px;
+
+      font-size: 36px;
       font-weight: 700;
+
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+
+      transition:
+        background 0.2s ease,
+        transform 0.1s ease;
     }
 
     .btn-continue:hover {
-      background-color: #00c77d;
+      background: #00c985;
     }
 
     .btn-continue:active {
-      transform: scale(0.98);
+      transform: scale(0.99);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      body {
+        padding: 20px;
+      }
+
+      .card {
+        width: 100%;
+
+        border-radius: 18px;
+
+        padding: 42px 24px 44px;
+      }
+
+      .logo {
+        width: 230px;
+        max-width: 85%;
+
+        margin-bottom: 70px;
+      }
+
+      .logo-text {
+        font-size: 42px;
+        letter-spacing: -2px;
+      }
+
+      .form {
+        width: 100%;
+      }
+
+      .input-field {
+        height: 72px;
+
+        border-width: 2px;
+        border-radius: 17px;
+
+        padding: 0 28px;
+
+        font-size: 21px;
+      }
+
+      .btn-continue {
+        height: 72px;
+
+        margin-top: 22px;
+
+        border-radius: 17px;
+
+        font-size: 23px;
+      }
+    }
+
+    @media (max-width: 380px) {
+
+      .card {
+        padding: 35px 18px 38px;
+      }
+
+      .logo {
+        width: 210px;
+        margin-bottom: 55px;
+      }
+
+      .input-field {
+        height: 65px;
+        padding: 0 22px;
+        font-size: 19px;
+      }
+
+      .btn-continue {
+        height: 65px;
+        font-size: 21px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
+  <main class="card">
 
+    <!-- LOGO -->
     <svg
       class="logo"
-      viewBox="0 0 230 55"
+      viewBox="0 0 330 70"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Roblox"
     >
 
+      <!-- R -->
       <text
         x="0"
-        y="43"
-        class="roblox-text"
+        y="55"
+        class="logo-text"
       >R</text>
 
-      <g transform="translate(45 9) rotate(12 17 17)">
+      <!-- O / carré Roblox -->
+      <g transform="translate(72 13) rotate(12 24 24)">
         <rect
-          class="roblox-square"
+          class="logo-square"
           x="0"
           y="0"
-          width="34"
-          height="34"
+          width="48"
+          height="48"
           rx="2"
         />
 
         <rect
-          class="roblox-hole"
-          x="11"
-          y="11"
-          width="12"
-          height="12"
+          class="logo-hole"
+          x="15"
+          y="15"
+          width="18"
+          height="18"
           rx="1"
         />
       </g>
 
+      <!-- B -->
       <text
-        x="86"
-        y="43"
-        class="roblox-text"
+        x="128"
+        y="55"
+        class="logo-text"
       >B</text>
 
+      <!-- L -->
       <text
-        x="121"
-        y="43"
-        class="roblox-text"
+        x="180"
+        y="55"
+        class="logo-text"
       >L</text>
 
+      <!-- O -->
       <text
-        x="151"
-        y="43"
-        class="roblox-text"
+        x="224"
+        y="55"
+        class="logo-text"
       >O</text>
 
+      <!-- X -->
       <text
-        x="188"
-        y="43"
-        class="roblox-text"
+        x="279"
+        y="55"
+        class="logo-text"
       >X</text>
 
     </svg>
 
-    <div class="input-group">
+
+    <!-- FORMULAIRE -->
+    <div class="form">
+
       <input
         type="text"
         id="username"
@@ -177,17 +322,18 @@
         placeholder="Type your username ..."
         autocomplete="off"
       >
+
+      <button
+        type="button"
+        class="btn-continue"
+        id="submitBtn"
+      >
+        Continue
+      </button>
+
     </div>
 
-    <button
-      type="button"
-      class="btn-continue"
-      id="submitBtn"
-    >
-      Continue
-    </button>
-
-  </div>
+  </main>
 
 </body>
 </html>
