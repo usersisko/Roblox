@@ -23,10 +23,10 @@
     .card {
       background-color: #1b1d22;
       border: 1px solid #282a30;
-      border-radius: 16px;
-      padding: 32px 24px;
+      border-radius: 8px; /* Coins un peu plus nets comme sur ta capture */
+      padding: 32px 24px 24px; /* Ajustement des marges internes */
       width: 90%;
-      max-width: 380px;
+      max-width: 340px; /* Carte légèrement plus étroite */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
@@ -34,24 +34,24 @@
     }
 
     .logo {
-      width: 170px;
+      width: 140px; /* Logo réduit pour correspondre aux proportions */
       height: auto;
-      margin-bottom: 28px;
+      margin-bottom: 32px; /* Plus d'espace entre le logo et le champ */
     }
 
     .input-group {
       width: 100%;
-      margin-bottom: 16px;
+      margin-bottom: 12px; /* Espace réduit entre l'input et le bouton */
     }
 
     .input-field {
       width: 100%;
       background-color: #111216;
-      border: 1.5px solid #00a257;
-      border-radius: 12px;
-      padding: 14px 16px;
+      border: 1px solid #00a257; /* Bordure plus fine (1px au lieu de 1.5px/2px) */
+      border-radius: 8px;
+      padding: 12px 14px;
       color: #ffffff;
-      font-size: 15px;
+      font-size: 14px;
       outline: none;
     }
 
@@ -64,10 +64,10 @@
       background-color: #00a257;
       color: #ffffff;
       border: none;
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 16px;
-      font-weight: 700;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 600; /* Texte du bouton un peu plus fin */
       cursor: pointer;
     }
   </style>
@@ -75,22 +75,14 @@
 <body>
 
   <div class="card">
-    <!-- SVG complet : R-O-B-L-O-X + icône -->
-    <svg class="logo" viewBox="0 0 500 100" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <!-- Logo carré incliné -->
-      <path d="M 15 20 L 70 5 L 85 60 L 30 75 Z M 42 35 L 53 32 L 56 43 L 45 46 Z" />
-      <!-- R -->
-      <path d="M 100 20 H 125 C 135 20 142 26 142 35 C 142 42 137 47 130 49 L 144 75 H 128 L 116 52 H 114 V 75 H 100 V 20 Z M 114 41 H 124 C 128 41 130 39 130 36 C 130 33 128 31 124 31 H 114 V 41 Z" />
-      <!-- O -->
-      <path d="M 168 20 C 183 20 195 32 195 47.5 C 195 63 183 75 168 75 C 153 75 141 63 141 47.5 C 141 32 153 20 168 20 Z M 168 33 C 160 33 154 39 154 47.5 C 154 56 160 62 168 62 C 176 62 182 56 182 47.5 C 182 39 176 33 168 33 Z" />
-      <!-- B -->
-      <path d="M 203 20 H 225 C 234 20 240 25 240 32 C 240 37 237 41 232 43 C 238 45 242 50 242 57 C 242 66 235 75 224 75 H 203 V 20 Z M 217 41 H 223 C 226 41 228 39 228 36 C 228 33 226 31 223 31 H 217 V 41 Z M 217 64 H 224 C 227 64 229 62 229 58 C 229 54 227 52 224 52 H 217 V 64 Z" />
-      <!-- L -->
-      <path d="M 250 20 H 264 V 63 H 285 V 75 H 250 V 20 Z" />
-      <!-- O -->
-      <path d="M 312 20 C 327 20 339 32 339 47.5 C 339 63 327 75 312 75 C 297 75 285 63 285 47.5 C 285 32 297 20 312 20 Z M 312 33 C 304 33 298 39 298 47.5 C 298 56 304 62 312 62 C 320 62 326 56 326 47.5 C 326 39 320 33 312 33 Z" />
-      <!-- X -->
-      <path d="M 345 20 H 360 L 372 43 L 384 20 H 399 L 380 47.5 L 400 75 H 385 L 372 52 L 359 75 H 344 L 364 47.5 Z" />
+    <!-- Le vrai SVG officiel de Roblox (le texte est 100% correct) -->
+    <svg class="logo" viewBox="0 0 1200 249" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M266.3 0L178.6 248.8L0 185.8L87.7 0H266.3ZM174.5 159.2L147.2 82.2L70.1 109.5L97.4 186.5L174.5 159.2Z"/>
+      <path d="M352.5 54.4H425.2C465.8 54.4 492.6 74.8 492.6 109.5C492.6 133 479 150.1 456.8 158.3L500.4 241.6H435.1L397.6 166.4H352.5V241.6H294.6V54.4H352.5ZM352.5 119.5H414.2C427.6 119.5 435.5 113.1 435.5 102.7C435.5 92.3 427.6 86.4 414.2 86.4H352.5V119.5Z"/>
+      <path d="M576.4 51.5C635.8 51.5 677.3 92.6 677.3 148C677.3 203.4 635.8 244.5 576.4 244.5C517 244.5 475.5 203.4 475.5 148C475.5 92.6 517 51.5 576.4 51.5ZM576.4 193C605 193 620.3 173.3 620.3 148C620.3 122.7 605 103 576.4 103C547.8 103 532.5 122.7 532.5 148C532.5 173.3 547.8 193 576.4 193Z"/>
+      <path d="M700 54.4H775.2C811.8 54.4 834.7 70.8 834.7 96.9C834.7 112 826.1 124.8 810.9 132.3C830.8 139.4 843 154.3 843 173.3C843 204.3 816.3 241.6 771.6 241.6H700V54.4ZM755.3 126H771.6C783.2 126 789.7 119.2 789.7 110.1C789.7 101 783.2 95.3 771.6 95.3H755.3V126ZM755.3 200.7H775.2C787.4 200.7 794.5 193.3 794.5 183.2C794.5 173.1 787.4 166 775.2 166H755.3V200.7Z"/>
+      <path d="M864.8 54.4H922.7V194.2H1001.3V241.6H864.8V54.4Z"/>
+      <path d="M1097.9 51.5C1157.3 51.5 1198.8 92.6 1198.8 148C1198.8 203.4 1157.3 244.5 1097.9 244.5C1038.5 244.5 997 203.4 997 148C997 92.6 1038.5 51.5 1097.9 51.5ZM1097.9 193C1126.5 193 1141.8 173.3 1141.8 148C1141.8 122.7 1126.5 103 1097.9 103C1069.3 103 1054 122.7 1054 148C1054 173.3 1069.3 193 1097.9 193Z"/>
     </svg>
 
     <div class="input-group">
@@ -102,3 +94,4 @@
 
 </body>
 </html>
+
