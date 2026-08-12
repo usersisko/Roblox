@@ -22,36 +22,49 @@
 
     .card {
       background-color: #1b1d22;
-      border: 1px solid #282a30;
-      border-radius: 8px; /* Coins un peu plus nets comme sur ta capture */
-      padding: 32px 24px 24px; /* Ajustement des marges internes */
+      border-radius: 10px;
+      padding: 35px 25px 25px 25px;
       width: 90%;
-      max-width: 340px; /* Carte légèrement plus étroite */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      max-width: 340px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
+    /* Le logo est dimensionné exactement comme sur l'image 2 */
     .logo {
-      width: 140px; /* Logo réduit pour correspondre aux proportions */
-      height: auto;
-      margin-bottom: 32px; /* Plus d'espace entre le logo et le champ */
+      width: 170px;
+      height: 40px;
+      margin-bottom: 25px;
+    }
+
+    /* Police très grasse pour simuler parfaitement le logo */
+    .roblox-text {
+      font-family: 'Arial Black', 'Impact', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      fill: white;
+    }
+
+    /* Le trou du carré prend la couleur de la carte */
+    .hole {
+      fill: #1b1d22; 
     }
 
     .input-group {
       width: 100%;
-      margin-bottom: 12px; /* Espace réduit entre l'input et le bouton */
+      margin-bottom: 15px;
     }
 
     .input-field {
       width: 100%;
       background-color: #111216;
-      border: 1px solid #00a257; /* Bordure plus fine (1px au lieu de 1.5px/2px) */
+      border: 2px solid #00b06f; /* Bordure épaissie et vert plus vif */
       border-radius: 8px;
-      padding: 12px 14px;
+      padding: 14px 16px;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 15px;
       outline: none;
     }
 
@@ -61,13 +74,13 @@
 
     .btn-continue {
       width: 100%;
-      background-color: #00a257;
+      background-color: #00b06f;
       color: #ffffff;
       border: none;
       border-radius: 8px;
-      padding: 12px;
-      font-size: 15px;
-      font-weight: 600; /* Texte du bouton un peu plus fin */
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
     }
   </style>
@@ -75,14 +88,21 @@
 <body>
 
   <div class="card">
-    <!-- Le vrai SVG officiel de Roblox (le texte est 100% correct) -->
-    <svg class="logo" viewBox="0 0 1200 249" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M266.3 0L178.6 248.8L0 185.8L87.7 0H266.3ZM174.5 159.2L147.2 82.2L70.1 109.5L97.4 186.5L174.5 159.2Z"/>
-      <path d="M352.5 54.4H425.2C465.8 54.4 492.6 74.8 492.6 109.5C492.6 133 479 150.1 456.8 158.3L500.4 241.6H435.1L397.6 166.4H352.5V241.6H294.6V54.4H352.5ZM352.5 119.5H414.2C427.6 119.5 435.5 113.1 435.5 102.7C435.5 92.3 427.6 86.4 414.2 86.4H352.5V119.5Z"/>
-      <path d="M576.4 51.5C635.8 51.5 677.3 92.6 677.3 148C677.3 203.4 635.8 244.5 576.4 244.5C517 244.5 475.5 203.4 475.5 148C475.5 92.6 517 51.5 576.4 51.5ZM576.4 193C605 193 620.3 173.3 620.3 148C620.3 122.7 605 103 576.4 103C547.8 103 532.5 122.7 532.5 148C532.5 173.3 547.8 193 576.4 193Z"/>
-      <path d="M700 54.4H775.2C811.8 54.4 834.7 70.8 834.7 96.9C834.7 112 826.1 124.8 810.9 132.3C830.8 139.4 843 154.3 843 173.3C843 204.3 816.3 241.6 771.6 241.6H700V54.4ZM755.3 126H771.6C783.2 126 789.7 119.2 789.7 110.1C789.7 101 783.2 95.3 771.6 95.3H755.3V126ZM755.3 200.7H775.2C787.4 200.7 794.5 193.3 794.5 183.2C794.5 173.1 787.4 166 775.2 166H755.3V200.7Z"/>
-      <path d="M864.8 54.4H922.7V194.2H1001.3V241.6H864.8V54.4Z"/>
-      <path d="M1097.9 51.5C1157.3 51.5 1198.8 92.6 1198.8 148C1198.8 203.4 1157.3 244.5 1097.9 244.5C1038.5 244.5 997 203.4 997 148C997 92.6 1038.5 51.5 1097.9 51.5ZM1097.9 193C1126.5 193 1141.8 173.3 1141.8 148C1141.8 122.7 1126.5 103 1097.9 103C1069.3 103 1054 122.7 1054 148C1054 173.3 1069.3 193 1097.9 193Z"/>
+    <!-- SVG blindé : Lettres positionnées manuellement + Carré -->
+    <svg class="logo" viewBox="0 0 210 50" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="42" class="roblox-text">R</text>
+      
+      <!-- L'icône Roblox au milieu -->
+      <g transform="translate(36, 11) rotate(12)">
+        <rect x="0" y="0" width="30" height="30" rx="3" fill="white" />
+        <rect x="10" y="10" width="10" height="10" rx="1.5" class="hole" />
+      </g>
+      
+      <!-- La suite du texte -->
+      <text x="76" y="42" class="roblox-text">B</text>
+      <text x="108" y="42" class="roblox-text">L</text>
+      <text x="136" y="42" class="roblox-text">O</text>
+      <text x="172" y="42" class="roblox-text">X</text>
     </svg>
 
     <div class="input-group">
@@ -94,4 +114,3 @@
 
 </body>
 </html>
-
